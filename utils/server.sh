@@ -10,6 +10,10 @@ tail -n 1000 server/default/log/server.log
 
 less server/default/log/server.log
 
+#### Who am  I ####################################################################################################
+
+whoami
+
 #### Starts Java Servers ##########################################################################################
 
 nohup ./run.sh -DappEnv=dev -c default -b 0.0.0.0 & 
@@ -18,7 +22,7 @@ nohup ./standalone.sh -DappEnv=dev -b 0.0.0.0 &
 
 #### Kill java process ############################################################################################
 
-ps aux | grep jboss  # (find proccess “pid” )
+ps aux | grep jboss  # (find proccess â€œpidâ€� )
 
 # Or
 
@@ -28,11 +32,11 @@ kill -9 "pid" -> numero do processo
 
 export PATH=$PATH:/java/jdk1.6.0_24/bin
 
-#### Memoria existente e utilizada da maquina #####################################################################
+#### Memory available #############################################################################################
 
 free -m -t
 
-#### Processador e Memoria ########################################################################################
+#### Processor and Memory #########################################################################################
 
 top # press F1
 
