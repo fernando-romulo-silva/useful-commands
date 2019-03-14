@@ -28,7 +28,7 @@ ps aux | grep jboss  # (find proccess â€œpidâ€� )
 
 jps (pids de processos java)
 
-kill -9 "pid" -> numero do processo
+kill -9 "pid" "process' identification"
 
 export PATH=$PATH:/java/jdk1.6.0_24/bin
 
