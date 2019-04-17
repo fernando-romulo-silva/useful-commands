@@ -28,22 +28,10 @@ ffmpeg -i 180704_2257.mp3 -ss 00:04:32 -to 01:28:00 -c copy file-1.mp3;
 for f in ./*.mp3; do echo "file '$f'" >> mylist.txt; done
 
 # create a silence file
-ffmpeg -filter_complex aevalsrc=0 -t 3 Silence.mp3
+ffmpeg -filter_complex aevalsrc=0 -t 3 silence.mp3
 
 # edit mylist.txt and put silence between the names
-edit file and put 'Silecen.mp3' between the files
+edit file and put 'silecen.mp3' between the files
 
 # concat audio files
 ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp3
-
-
-
-# concat mp4 files
-
-:: Create File List
-echo file file1.mp4 >  mylist.txt 
-echo file file2.mp4 >> mylist.txt
-echo file file3.mp4 >> mylist.txt
-
-:: Concatenate Files
-ffmpeg -f concat -i mylist.txt -c copy output.mp4
