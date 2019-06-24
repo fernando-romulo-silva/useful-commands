@@ -28,7 +28,7 @@ ffmpeg -i 180704_2257.mp3 -ss 00:04:32 -to 01:28:00 -c copy file-1.mp3;
 for f in ./*.mp3; do echo "file '$f'" >> mylist.txt; done
 
 # put the file names on the mylist.txt with Silence.mp3 between
-for f in ./*.mp3; do echo -e "file '$f'\nfile './Silence.mp3'" >> mylist.txt; done
+for f in ./*.mp3; do echo -e "file '$f'\nfile '/home/fernando/Downloads/Silence.mp3'" >> mylist.txt; done
 
 # create a silence file
 ffmpeg -filter_complex aevalsrc=0 -t 3 silence.mp3
