@@ -11,3 +11,7 @@ for file in * ; do mv -v "$file" "$(echo $file | sed 's/_/ /g')" ; done
 convert *.png  -compress jpeg -resize 1240x1753  -extent 1240x1753 -gravity center -units PixelsPerInch -density 150x150 multipage.pdf
 
 convert *.png  -compress jpeg -gravity center   -units PixelsPerInch -density 300x300 multipage.pdf
+
+#### Convert txt to PDF #####################################################################################################
+
+for file in *.txt; do libreoffice --convert-to "pdf" "$file"; done
