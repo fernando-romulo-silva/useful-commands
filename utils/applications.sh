@@ -14,4 +14,8 @@ convert *.png  -compress jpeg -gravity center   -units PixelsPerInch -density 30
 
 #### Convert txt to PDF #####################################################################################################
 
+install xelatex and pdflatex
+
 for file in *.txt; do libreoffice --convert-to "pdf" "$file"; done
+
+for file in *.txt; do pandoc --latex-engine=xelatex "$file" -o "${file%txt}"pdf; done
