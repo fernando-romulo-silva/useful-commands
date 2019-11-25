@@ -10,6 +10,8 @@ tail -n 1000 server/default/log/server.log
 
 less server/default/log/server.log
 
+cat /var/log/docker/containers/sonny/server.log | grep alguma cois
+
 #### Who am  I ####################################################################################################
 
 whoami
