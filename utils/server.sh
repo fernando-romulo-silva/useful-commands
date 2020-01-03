@@ -10,6 +10,8 @@ tail -n 1000 server/default/log/server.log
 
 less server/default/log/server.log
 
+cat /var/log/docker/containers/sonny/server.log | grep alguma coisa
+
 #### Who am  I ####################################################################################################
 
 whoami
@@ -30,7 +32,9 @@ jps (pids de processos java)
 
 kill -9 "pid" "process' identification"
 
-export PATH=$PATH:/java/jdk1.6.0_24/bin
+# Or
+
+fuser -k 8080/tcp
 
 #### Memory available #############################################################################################
 
