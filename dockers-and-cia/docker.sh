@@ -13,3 +13,9 @@ docker build -t image_name .
 
 # Run the image
 docker run -d -p 80:80 --name container_name image_name
+
+# List images
+docker images
+
+# Remove an image
+docker rmi 59ada6b2b508
