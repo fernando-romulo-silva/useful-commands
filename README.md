@@ -17,7 +17,7 @@ Some useful terminal commands helping to deal with the internet.
 
 ## multimida
 
-Ripping, extract audio, converting videos, and audios, etc. A lot of stuff for multimedia things. Thanks [ffmpeg] (https://github.com/FFmpeg/FFmpeg)!
+Ripping, extract audio, converting videos, and audios, etc. A lot of stuff for multimedia things. Thanks [ffmpeg](https://github.com/FFmpeg/FFmpeg)!
 
 ## utils
 
