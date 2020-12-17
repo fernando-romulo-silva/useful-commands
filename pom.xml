@@ -6,7 +6,7 @@
 	<packaging>pom</packaging>
 
 	<description>
-	     Project for commons configuration for java projects (SE, Web, JEE and android) for java 8.
+	     This is a set of Linux useful terminal programs that help the author in his work life. It's not an executable project, just a place to reminder "how to do".
 	</description>
 
 	<licenses>
