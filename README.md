@@ -4,7 +4,7 @@
 [![Project status](https://img.shields.io/badge/Project%20status-Maintenance-orange.svg)](https://img.shields.io/badge/Project%20status-Maintenance-orange.svg)
 
 ## Project status
-I use this project to learn new technologies related to microservices. In this case, the image convert. So it'll get new things all time.
+Some useful terminal programs that help the author in his work life.
 
 # About
 This is a set of Linux useful terminal programs that help the author in his work life.
