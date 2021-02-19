@@ -19,3 +19,9 @@ install xelatex and pdflatex
 for file in *.txt; do libreoffice --convert-to "pdf" "$file"; done
 
 for file in *.txt; do pandoc --latex-engine=xelatex "$file" -o "${file%txt}"pdf; done
+
+#### Replace text on txt files ##############################################################################################
+
+sed -i '/texto/' *txt # remove 'texto' string from txt files
+
+sed -i 's/,/;/g' *txt # repalce ',' to ';' on txt files

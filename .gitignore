@@ -53,3 +53,4 @@ nb-configuration.xml
 # Ant files
 .ant-targets-build.xml
 build.properties
+/.gradle/
