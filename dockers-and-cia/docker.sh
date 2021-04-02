@@ -28,4 +28,8 @@ docker rmi 59ada6b2b508
 docker run -d -p 80:80 --name container_name image_name
 
 
-docker run -i -p 80:80 --rm --name container_name image_name
+docker run -i --rm -p 80:80 --rm --name container_name image_name
+
+# -i flag connects the container to the terminal
+# --rm removes the container's file system after tthe container exits
+# -p 8082:8080 exposes the port 8082 externally, thus mapping to port 8080 on the host machine
