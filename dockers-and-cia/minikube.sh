@@ -2,6 +2,8 @@
 minikube delete
 
 # Start the cluster
+minikube start
+
 minikube start --vm-driver="virtualbox" 
 
 minikube start --vm-driver="virtualbox" --memory=8192 --cpus=8 --disk-size=50g
