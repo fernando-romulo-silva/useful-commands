@@ -1,3 +1,6 @@
+# check the version
+kubectl version
+
 # You can also look at the Pods with:
 kubectl get pods
 

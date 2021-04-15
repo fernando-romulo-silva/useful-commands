@@ -2,11 +2,12 @@
 minikube delete
 
 # Start the cluster
-minikube start
-
 minikube start --vm-driver="virtualbox" 
 
 minikube start --vm-driver="virtualbox" --memory=8192 --cpus=8 --disk-size=50g
+
+# start with 2 nodes
+minikube start --nodes 2 -p 
 
 # Show dashboard
 minikube dashboard
@@ -22,6 +23,8 @@ docker build -t hello-java:v1 .
 # Set your deployment to not pull IfNotPresent, K8S default is set to "Always" Change to "IfNotPresent"
 imagePullPolicy: IfNotPresent
 
+# To get the URL and port to access our application
+minikube service list
 
 # All we need to call the service is the IP of the cluster. We can get it using the following command:
 minikube ip
