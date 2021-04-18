@@ -3,7 +3,11 @@
 docker login --username=fernandoromulosilva --password=fernandoDocker# --docker-email=fernando.romulo.silva@gmail.com
 
 # pull a image
+# docker image pull <repository>:<tag>
 docker pull ubuntu:16.04
+
+# docker image pull <url-register>/<repository>:<tag>
+docker image pull gcr.io/google-containers/git-sync:v3.1.5
 
 # list images
 docker image ls
@@ -40,3 +44,7 @@ docker run -i --rm -p 80:80 --rm --name container_name image_name
 
 # Lists containers
 docker container ls
+
+# attach it
+docker container exec -it container_name bash
+
