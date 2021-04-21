@@ -32,10 +32,10 @@ docker image ls | grep prefix/
 docker rmi 59ada6b2b508
 
 # Run the image
-docker run -d -p 80:80 --name container_name image_name
+docker run -d -p 80:80 --name container_name prefix/image_name
 
 
-docker run -i --rm -p 80:80 --rm --name container_name image_name
+docker run -i --rm -p 80:80 --rm --name container_name prefix/image_name
 
 # -i flag connects the container to the terminal
 # --rm removes the container's file system after tthe container exits
@@ -47,4 +47,9 @@ docker container ls
 
 # attach it
 docker container exec -it container_name bash
+
+# one and only process running inside of the container!!!
+ps -elf
+
+# killing the main process in the container will kill the container
 
