@@ -45,6 +45,9 @@ docker run -i --rm -p 80:80 --rm --name container_name prefix/image_name
 # Lists containers
 docker container ls
 
+# List images only latest
+docker image ls --filter=reference="*:latest"
+
 # attach it
 docker container exec -it container_name bash
 
@@ -53,3 +56,10 @@ ps -elf
 
 # killing the main process in the container will kill the container
 
+# search images on the registers
+docker search openjdk
+
+# show the image's layer
+docker image inspect
+
+docker image ls --digests alpine
