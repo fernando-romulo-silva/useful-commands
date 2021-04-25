@@ -9,6 +9,11 @@ docker pull ubuntu:16.04
 # docker image pull <url-register>/<repository>:<tag>
 docker image pull gcr.io/google-containers/git-sync:v3.1.5
 
+# tag an image
+docker image tag <current-tag>:<new-tag> <repository>:<new-tag>
+
+docker image tag web:latest nigelpoulton/web:latest
+
 # list images
 docker image ls
 
@@ -37,6 +42,7 @@ docker run -d -p 80:80 --name container_name prefix/image_name
 
 docker run -i --rm -p 80:80 --rm --name container_name prefix/image_name
 
+docker container run --name neversaydie -it --restart always alpine sh # always | unless-stopped | on-failure
 
 
 # -i flag connects the container to the terminal
@@ -65,3 +71,13 @@ docker search openjdk
 docker image inspect
 
 docker image ls --digests alpine
+
+
+# docker container stop sends a SIGTERM signal to the main application process inside the container (PID 1)
+
+docker container stop percy
+
+
+
+docker container run -d --name webserver -p 80:8080 nigelpoulton/pluralsight-docker-ci
+

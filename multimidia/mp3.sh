@@ -31,10 +31,7 @@ for f in ./*.mp3; do echo "file '$f'" >> mylist.txt; done
 for f in ./*.mp3; do echo -e "file '$f'\nfile '/home/fernando/Downloads/Silence.mp3'" >> mylist.txt; done
 
 # create a silence file
-ffmpeg -filter_complex aevalsrc=0 -t 3 silence.mp3
-
-# edit mylist.txt and put silence between the names
-edit file and put 'silecen.mp3' between the files
+ffmpeg -filter_complex aevalsrc=0 -t 4 Silence.mp3
 
 # concat audio files
 ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp3
