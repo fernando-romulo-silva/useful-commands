@@ -70,14 +70,18 @@ docker search openjdk
 # show the image's layer
 docker image inspect
 
+# show the image's layer
+docker image history web:latest
+
+# get image digest
 docker image ls --digests alpine
+
+# Use apt-get install no-install-recommends makes sure that apt only installs main dependencies
 
 
 # docker container stop sends a SIGTERM signal to the main application process inside the container (PID 1)
 
 docker container stop percy
-
-
 
 docker container run -d --name webserver -p 80:8080 nigelpoulton/pluralsight-docker-ci
 
