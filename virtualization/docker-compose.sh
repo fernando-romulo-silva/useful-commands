@@ -19,3 +19,16 @@ docker-compose down
 
 # or
 docker-compose -f docker-compose.yaml down
+
+
+# show the current status
+docker-compose ps
+
+# list the processes running inside of each service
+docker-compose top
+
+# remove
+docker-compose rm
+
+# restart the application
+docker-compose restart
