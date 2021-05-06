@@ -78,10 +78,20 @@ docker image ls --digests alpine
 
 # Use apt-get install no-install-recommends makes sure that apt only installs main dependencies
 
-
 # docker container stop sends a SIGTERM signal to the main application process inside the container (PID 1)
 
 docker container stop percy
 
 docker container run -d --name webserver -p 80:8080 nigelpoulton/pluralsight-docker-ci
+
+docker network create -d macvlan --subnet=10.0.0.0/24 --ip-range=10.0.0.0/25 --gateway=10.0.0.1 -o parent=eth0.100 macvlan100
+
+# create network
+docker network create -d bridge localnet
+
+
+# attache container this net work
+
+docker container run -d --name c1 --network localnet alpine sleep 1d
+
 
