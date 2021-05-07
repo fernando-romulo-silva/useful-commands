@@ -36,14 +36,19 @@ docker image ls | grep prefix/
 # Remove an image
 docker rmi 59ada6b2b508
 
+#--------------------------------------------------------------------------------------------------------
+
 # Run the image
 docker run -d -p 80:80 --name container_name prefix/image_name
 
-
+# exclude after exit
 docker run -i --rm -p 80:80 --rm --name container_name prefix/image_name
 
-docker container run --name neversaydie -it --restart always alpine sh # always | unless-stopped | on-failure
+# add the host to access
+docker run -d -p 80:80 --name container_name prefix/image_name --add-host host.docker.internal:host-gateway
 
+# retarts policies
+docker container run --name neversaydie -it --restart always alpine sh # always | unless-stopped | on-failure
 
 # -i flag connects the container to the terminal
 # --rm removes the container's file system after tthe container exits
@@ -78,6 +83,9 @@ docker image ls --digests alpine
 
 # Use apt-get install no-install-recommends makes sure that apt only installs main dependencies
 
+
+# -------------------------------------------------------------------------------------------------------
+
 # docker container stop sends a SIGTERM signal to the main application process inside the container (PID 1)
 
 docker container stop percy
@@ -86,12 +94,26 @@ docker container run -d --name webserver -p 80:8080 nigelpoulton/pluralsight-doc
 
 docker network create -d macvlan --subnet=10.0.0.0/24 --ip-range=10.0.0.0/25 --gateway=10.0.0.1 -o parent=eth0.100 macvlan100
 
+
+# -------------------------------------------------------------------------------------------------------
+# NetWork
+
 # create network
 docker network create -d bridge localnet
 
 
 # attache container this net work
-
 docker container run -d --name c1 --network localnet alpine sleep 1d
 
+# inspect it
+docker network inspect localnet
+
+# list all local networks
+docker network ls
+
+
+# -------------------------------------------------------------------------------------------------------
+# show the logs
+
+docker logs books-database
 
