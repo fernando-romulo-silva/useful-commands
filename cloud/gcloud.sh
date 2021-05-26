@@ -10,5 +10,11 @@ gcloud config configurations list
 # set auth configs for application GOOGLE_APPLICATION_CREDENTIALS
 gcloud auth application-default login
 
-# define the project (cluster kubnernets)
+# define the project
 gcloud config set project PROJECT_ID
+
+# get credentials from cluster
+gcloud container cluster get-credentials CLUSTER_ID
+
+# set your compute zone
+gcloud config set compute/zone southamerica-east1
