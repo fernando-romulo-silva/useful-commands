@@ -1,13 +1,16 @@
 # Delete the cluster
-minikube delete
+minikube delete cluster-name
 
 # Start the cluster
 minikube start --vm-driver="virtualbox" 
 
-minikube start --vm-driver="virtualbox" --memory=8192 --cpus=8 --disk-size=50g
+minikube delete --all
 
 # start with 2 nodes
-minikube start --nodes 2 -p 
+minikube start --nodes 2
+
+# other infos
+minikube start --vm-driver="virtualbox" --memory=8192 --cpus=8 --disk-size=10g --nodes 2 -p multinode
 
 # Show dashboard
 minikube dashboard

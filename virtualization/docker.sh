@@ -36,6 +36,10 @@ docker image ls | grep prefix/
 # Remove an image
 docker rmi 59ada6b2b508
 
+# create a image from container
+
+docker container commit 59ada6b2b508 name-image
+
 #--------------------------------------------------------------------------------------------------------
 
 # Run the image
