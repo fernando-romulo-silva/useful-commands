@@ -1,6 +1,6 @@
 
 # login on docker repository
-docker login --username=fernandoromulosilva --password=fernandoDocker# --docker-email=fernando.romulo.silva@gmail.com
+docker login --username=fernandoromulosilva --password=123changeit
 
 # pull a image
 # docker image pull <repository>:<tag>
