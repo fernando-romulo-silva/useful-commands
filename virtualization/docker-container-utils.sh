@@ -26,5 +26,8 @@ $ docker run --name test-activemq -d -p 61616:61616 -p 8161:8161 -p 5672:5672 -p
 $ docker run --name test-artemis -d -e ARTEMIS_USERNAME=admin -e ARTEMIS_PASSWORD=admin -e ANONYMOUS_LOGIN=true -p 8161:8161 -p 61616:61616 -p 5672:5672 vromero/activemq-artemis:2.12.0-alpine
 
 
-
-
+# ===============================================================================
+# Rabbit MQ
+# http://localhost:15672 (firefox) 
+# user and password
+$ docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password -e RABBITMQ_DEFAULT_VHOST=my_vhost -p 5672:5672 -p 15672:15672 rabbitmq:3-management
