@@ -29,8 +29,8 @@ $ docker run --name test-artemis -d -e ARTEMIS_USERNAME=admin -e ARTEMIS_PASSWOR
 # ===============================================================================
 # Rabbit MQ
 # http://localhost:15672 (firefox) 
-# user and password
-$ docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password -e RABBITMQ_DEFAULT_VHOST=my_vhost -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+# user and password: admin
+$ docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin -e RABBITMQ_DEFAULT_VHOST=my_vhost -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 
 
 
@@ -39,5 +39,5 @@ $ docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_DEFAULT_USER
 $ docker run -d --name graphite-server -p 80:80 -p 2003-2004:2003-2004 -p 2023-2024:2023-2024 -p 8125:8125/udp -p 8126:8126 graphiteapp/graphite-statsd
 
 # Grafana
-# admin:admin
+# user and password: admin
 $ docker run -d --name graphana-server -p 3000:3000 grafana/grafana
