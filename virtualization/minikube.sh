@@ -10,7 +10,7 @@ minikube delete --all
 minikube start --nodes 2
 
 # other infos
-minikube start --vm-driver="virtualbox" --memory=8192 --cpus=8 --disk-size=10g --nodes 2 -p multinode
+minikube start --vm-driver="virtualbox" --memory=8192 --cpus=6 --disk-size=10g --nodes 3 -p multinode
 
 # Show dashboard
 minikube dashboard
