@@ -12,6 +12,9 @@ minikube start --nodes 2
 # other infos
 minikube start --vm-driver="virtualbox" --memory=8192 --cpus=6 --disk-size=10g --nodes 3 -p multinode
 
+# Minikube stop
+minikube stop -p multinode
+
 # Show dashboard
 minikube dashboard
 
