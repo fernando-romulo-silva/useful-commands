@@ -11,7 +11,7 @@ kubectl create -f service.yml
 kubectl apply -f service.yml
 
 # To see if our service is created properly:
-kubectl get services
+kubectl get services -o wide
 
 # To see the details of a specific service, we use the describe command:
 kubectl describe service rest-example
@@ -44,3 +44,6 @@ kubectl exec wildfly-65cbbddcd7-68q4r ls --namespace my-namespace
 
 # To get a Shell in a Container, use the -t -i options to get a tty and attach STDIN. You can specific namespace, use the namespace flag:
 kubectl exec -t -i  wildfly-65cbbddcd7-68q4r bash --namespace my-namespace
+
+# show all elements
+kubectl get all -o wide
