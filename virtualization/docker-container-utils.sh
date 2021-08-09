@@ -1,13 +1,13 @@
 # ===============================================================================
 # Postgree
 
-$ docker run --name test-postgres -e POSTGRES_DB=postgres-db -e POSTGRES_USER=user -e POSTGRES_PASSWORD=user -d -p 5432:5432 postgres:latest
+$ docker run --name test-postgres --env POSTGRES_DB=postgres-db --env POSTGRES_USER=user --env POSTGRES_PASSWORD=user --detach --publish 5432:5432 postgres:latest
 #
 #
 # ===============================================================================
 # MySql
 #
-$ docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=mysql-db -e MYSQL_USER=user -e MYSQL_PASSWORD=user -d -p 3306:3306 mysql:latest
+$ docker run --name test-mysql --env MYSQL_ROOT_PASSWORD=root --env MYSQL_DATABASE=mysql-db --env MYSQL_USER=user --env MYSQL_PASSWORD=user --detach --publish 3306:3306 mysql:latest
 #
 #
 # ===============================================================================
@@ -18,15 +18,15 @@ $ docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=mys
 # username: system
 # password: oracle
 #
-$ docker run -d -p 1521:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g-r2
+$ docker run --name test-oracle --env ORACLE_ALLOW_REMOTE=true --detach --publish 1521:1521 wnameless/oracle-xe-11g-r2
 #
 #
 # ===============================================================================
 # Active MQ
 # http://0.0.0.0:8161 (firefox)
 # user and password: admin
-#                                       tcp            admin http   amqp         stomp
-$ docker run --name test-activemq -d -p 61616:61616 -p 8161:8161 -p 5672:5672 -p 61613:61613 rmohr/activemq
+#                                                       tcp               admin http            amqp                  stomp
+$ docker run --name test-activemq --detach --publish 61616:61616 --publish 8161:8161 --publish 5672:5672 --publish 61613:61613 rmohr/activemq
 #
 #
 # ===============================================================================
@@ -34,7 +34,7 @@ $ docker run --name test-activemq -d -p 61616:61616 -p 8161:8161 -p 5672:5672 -p
 # http://0.0.0.0:8161 (firefox)
 # user and password: admin
 #                                                                                                                  admin http   amqp           stomp
-$ docker run --name test-artemis -d -e ARTEMIS_USERNAME=admin -e ARTEMIS_PASSWORD=admin -e ANONYMOUS_LOGIN=true -p 8161:8161 -p 61616:61616 -p 5672:5672 vromero/activemq-artemis:2.12.0-alpine
+$ docker run --name test-artemis --detach --env ARTEMIS_USERNAME=admin --env ARTEMIS_PASSWORD=admin --env ANONYMOUS_LOGIN=true --publish 8161:8161 --publish 61616:61616 --publish 5672:5672 vromero/activemq-artemis:2.12.0-alpine
 #
 #
 # ===============================================================================
@@ -42,19 +42,19 @@ $ docker run --name test-artemis -d -e ARTEMIS_USERNAME=admin -e ARTEMIS_PASSWOR
 # http://localhost:15672 (firefox) 
 # user and password: admin
 #
-$ docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin -e RABBITMQ_DEFAULT_VHOST=my_vhost -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+$ docker run --detach --hostname my-rabbit --name some-rabbit --env RABBITMQ_DEFAULT_USER=admin --env RABBITMQ_DEFAULT_PASS=admin --env RABBITMQ_DEFAULT_VHOST=my_vhost --publish 5672:5672 --publish 15672:15672 rabbitmq:3-management
 #
 #
 # ===============================================================================
 # Graphite
 #
-$ docker run -d --name graphite-server -p 80:80 -p 2003-2004:2003-2004 -p 2023-2024:2023-2024 -p 8125:8125/udp -p 8126:8126 graphiteapp/graphite-statsd
+$ docker run --detach --name graphite-server --publish 80:80 --publish 2003-2004:2003-2004 --publish 2023-2024:2023-2024 --publish 8125:8125/udp --publish 8126:8126 graphiteapp/graphite-statsd
 #
 #
 # ===============================================================================
 # Grafana
 # user and password: admin
 #
-$ docker run -d --name graphana-server -p 3000:3000 grafana/grafana
+$ docker run --detach --name graphana-server --publish 3000:3000 grafana/grafana
 #
 #
