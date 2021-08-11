@@ -42,7 +42,7 @@ $ docker run --name test-artemis --detach --env ARTEMIS_USERNAME=admin --env ART
 # http://localhost:15672 (firefox) 
 # user and password: admin
 #
-$ docker run --detach --hostname my-rabbit --name some-rabbit --env RABBITMQ_DEFAULT_USER=admin --env RABBITMQ_DEFAULT_PASS=admin --env RABBITMQ_DEFAULT_VHOST=my_vhost --publish 5672:5672 --publish 15672:15672 rabbitmq:3-management
+$ docker run --hostname my-rabbit --name some-rabbit --detach --env RABBITMQ_DEFAULT_USER=admin --env RABBITMQ_DEFAULT_PASS=admin --env RABBITMQ_DEFAULT_VHOST=my_vhost --publish 5672:5672 --publish 15672:15672 rabbitmq:3-management
 #
 #
 # ===============================================================================
@@ -58,3 +58,8 @@ $ docker run --detach --name graphite-server --publish 80:80 --publish 2003-2004
 $ docker run --detach --name graphana-server --publish 3000:3000 grafana/grafana
 #
 #
+# ===============================================================================
+# Mongo DB
+# 127.0.0.1:27017
+#
+$ docker run --name test-mongo --detach  --env MONGO_INITDB_ROOT_USERNAME=root --env MONGO_INITDB_ROOT_PASSWORD=root --env MONGO_INITDB_DATABASE=testdb --publish 27017:27017 --publish 28017:28017 mongo:latest
