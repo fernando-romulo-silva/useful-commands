@@ -1,18 +1,24 @@
-
+#--------------------------------------------------------------------------------------------------------
 # login on docker repository
 docker login --username=fernandoromulosilva --password=123changeit
+
+#--------------------------------------------------------------------------------------------------------
+# -------- Images
 
 # pull a image
 # docker image pull <repository>:<tag>
 docker pull ubuntu:16.04
 
+
 # docker image pull <url-register>/<repository>:<tag>
 docker image pull gcr.io/google-containers/git-sync:v3.1.5
+
 
 # tag an image
 docker image tag <current-tag>:<new-tag> <repository>:<new-tag>
 
 docker image tag web:latest nigelpoulton/web:latest
+
 
 # list images
 docker image ls
@@ -21,26 +27,36 @@ docker image ls
 docker images
 
 
+#--------------------------------------------------------------------------------------------------------
+# -------- Cleaning
+
 # Remove all unused volumes
 docker volume prune
 
-# Create a image (from Dockerfile)
-docker build -t image_name .
 
-# Create a image (from Dockerfile)
-docker image build -f src/main/docker/Dockerfile.something -t prefix/image_name .
+# Remove all unused images
+docker images -qf dangling=true | xargs docker rmi
 
-# List prefix's images
-docker image ls | grep prefix/
+# or
+docker prune
 
-# Remove an image
-docker rmi 59ada6b2b508
 
-# create a image from container
+# Remove dangling volumes
+docker volume ls -qf dangling=true | xargs -r docker volume rm
 
-docker container commit 59ada6b2b508 name-image
+# Delete exited containers
+docker rm `docker ps -aq`
+
+
+# kill all running containers 
+docker kill `docker ps -aq`
+
+
+# Remove all unused thing
+docker system prune
 
 #--------------------------------------------------------------------------------------------------------
+# -------- Images
 
 # Run the image
 docker run -d -p 80:80 --name container_name prefix/image_name
@@ -58,6 +74,43 @@ docker container run --name neversaydie -it --restart always alpine sh # always 
 # --rm removes the container's file system after tthe container exits
 # -p 8082:8080 exposes the port 8082 externally, thus mapping to port 8080 on the host machine
 
+# Create a image (from Dockerfile)
+docker build -t image_name .
+
+
+# Create a image (from Dockerfile)
+docker image build -f src/main/docker/Dockerfile.something -t prefix/image_name .
+
+
+# List prefix's images
+docker image ls | grep prefix/
+
+
+# Remove an image
+docker rmi 59ada6b2b508
+
+
+# create a image from container
+docker container commit 59ada6b2b508 name-image
+
+
+# search images on the registers
+docker search openjdk
+
+
+# show the image's layer
+docker image inspect
+
+
+# show the image's layer
+docker image history web:latest
+
+
+# get image digest
+docker image ls --digests alpine
+
+#--------------------------------------------------------------------------------------------------------
+# -------- Containers
 
 # Lists containers
 docker container ls
@@ -73,17 +126,6 @@ ps -elf
 
 # killing the main process in the container will kill the container
 
-# search images on the registers
-docker search openjdk
-
-# show the image's layer
-docker image inspect
-
-# show the image's layer
-docker image history web:latest
-
-# get image digest
-docker image ls --digests alpine
 
 # Use apt-get install no-install-recommends makes sure that apt only installs main dependencies
 
@@ -100,13 +142,12 @@ docker network create -d macvlan --subnet=10.0.0.0/24 --ip-range=10.0.0.0/25 --g
 
 
 # -------------------------------------------------------------------------------------------------------
-# NetWork
+# -------- NetWork
 
 # create network
 docker network create -d bridge localnet
 
-
-# attache container this net work
+# attach container this net work
 docker container run -d --name c1 --network localnet alpine sleep 1d
 
 # inspect it
@@ -117,7 +158,7 @@ docker network ls
 
 
 # -------------------------------------------------------------------------------------------------------
-# show the logs
+# -------- Show the logs
 
 docker logs books-database
 
