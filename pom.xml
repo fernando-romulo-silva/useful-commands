@@ -21,8 +21,8 @@
 
 	<scm>
 		<url>https://github.com/fernando-romulo-silva/useful-linux-scripts</url>
-		<connection>scm:git:https://github.com/fernando-romulo-silva/useful-linux-scripts.git</connection>
-		<developerConnection>scm:git:https://github.com/fernando-romulo-silva/useful-linux-scripts.git</developerConnection>
+		<connection>scm:git:ssh://git@github.com/fernando-romulo-silva/useful-linux-scripts.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/fernando-romulo-silva/useful-linux-scripts.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
