@@ -11,7 +11,7 @@ $ docker run --name test-mysql --env MYSQL_ROOT_PASSWORD=root --env MYSQL_DATABA
 #
 #
 # ===============================================================================
-# oracle
+# Oracle
 # hostname: localhost
 # port: 1521
 # sid: xe
