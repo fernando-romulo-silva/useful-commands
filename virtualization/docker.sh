@@ -27,59 +27,12 @@ docker image ls
 docker images
 
 
-#--------------------------------------------------------------------------------------------------------
-# -------- Cleaning
-
-# Remove all unused volumes
-docker volume prune
-
-
-# Remove all unused images
-docker images -qf dangling=true | xargs docker rmi
-
-# or
-docker prune
-
-
-# Remove dangling volumes
-docker volume ls -qf dangling=true | xargs -r docker volume rm
-
-# Delete exited containers
-docker rm `docker ps -aq`
-
-
-# kill all running containers 
-docker kill `docker ps -aq`
-
-
-# Remove all unused thing
-docker system prune
-
-#--------------------------------------------------------------------------------------------------------
-# -------- Images
-
-# Run the image
-docker run -d -p 80:80 --name container_name prefix/image_name
-
-# exclude after exit
-docker run -i --rm -p 80:80 --rm --name container_name prefix/image_name
-
-# add the host to access
-docker run -d -p 80:80 --name container_name prefix/image_name --add-host host.docker.internal:host-gateway
-
-# retarts policies
-docker container run --name neversaydie -it --restart always alpine sh # always | unless-stopped | on-failure
-
-# -i flag connects the container to the terminal
-# --rm removes the container's file system after tthe container exits
-# -p 8082:8080 exposes the port 8082 externally, thus mapping to port 8080 on the host machine
-
 # Create a image (from Dockerfile)
-docker build -t image_name .
+docker build --tag image_name .
 
 
 # Create a image (from Dockerfile)
-docker image build -f src/main/docker/Dockerfile.something -t prefix/image_name .
+docker image build --file src/main/docker/Dockerfile.something --tag prefix/image_name .
 
 
 # List prefix's images
@@ -109,8 +62,54 @@ docker image history web:latest
 # get image digest
 docker image ls --digests alpine
 
+
+#--------------------------------------------------------------------------------------------------------
+# -------- Cleaning
+
+# Remove all unused volumes
+docker volume prune
+
+
+# Remove all unused images
+docker images -qf dangling=true | xargs docker rmi
+
+# or
+docker prune
+
+
+# Remove dangling volumes
+docker volume ls -qf dangling=true | xargs -r docker volume rm
+
+# Delete exited containers
+docker rm `docker ps -aq`
+
+
+# kill all running containers 
+docker kill `docker ps -aq`
+
+
+# Remove all unused thing
+docker system prune
+
 #--------------------------------------------------------------------------------------------------------
 # -------- Containers
+
+# Run the image
+docker run -d -p 80:80 --name container_name prefix/image_name
+
+# exclude after exit
+docker run -i --rm -p 80:80 --rm --name container_name prefix/image_name
+
+# add the host to access
+docker run -d -p 80:80 --name container_name prefix/image_name --add-host host.docker.internal:host-gateway
+
+# retarts policies
+docker container run --name neversaydie -it --restart always alpine sh # always | unless-stopped | on-failure
+
+# -i flag connects the container to the terminal
+# --rm removes the container's file system after tthe container exits
+# -p 8082:8080 exposes the port 8082 externally, thus mapping to port 8080 on the host machine
+
 
 # Lists containers
 docker container ls
@@ -136,7 +135,7 @@ ps -elf
 
 docker container stop percy
 
-docker container run -d --name webserver -p 80:8080 nigelpoulton/pluralsight-docker-ci
+docker container run --detach --name webserver -p 80:8080 nigelpoulton/pluralsight-docker-ci
 
 docker network create -d macvlan --subnet=10.0.0.0/24 --ip-range=10.0.0.0/25 --gateway=10.0.0.1 -o parent=eth0.100 macvlan100
 
@@ -160,5 +159,9 @@ docker network ls
 # -------------------------------------------------------------------------------------------------------
 # -------- Show the logs
 
+# logs
 docker logs books-database
+
+# --follow command will continue streaming the new output
+docker logs --follow books-database
 
