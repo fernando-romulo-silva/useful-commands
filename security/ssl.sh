@@ -17,6 +17,7 @@ echo y | keytool -genkeypair -dname "cn=Mark Jones, ou=JavaSoft, o=Sun, c=US"
    -keystore ~/application.keystore 
    -storepass 123456changeit
    -validity 20000
+   -storetype PKCS12
    -keyalg RSA
  
 # 
@@ -40,6 +41,8 @@ echo y | keytool -genkeypair -dname "cn=Mark Jones, ou=JavaSoft, o=Sun, c=US"
 #
 # keysize is the size in bit 
 #
+# storetype This qualifier specifies the type of keystore to be instantiated.
+#
 # Note the alias you use here to create the keystore. 
 # You will need to use the same alias later when you install your certificate.
 #
@@ -61,6 +64,8 @@ type ~/certreq.csr
 
 keytool -list -v -keystore ~/application.keystore 
 
+# Now the certreq.csr file can import the certificate into your client, most likely a browser, and start accessing your APIs
+
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -81,5 +86,16 @@ keytool -import -trustcacerts -alias ssl -file ~/certreq.csr -keystore ~/applica
 openssl pkcs12 -export -in mycert.crt -inkey mykey.key
                         -out mycert.p12 -name tomcat -CAfile myCA.crt
                         -caname root -chain
+                        
+                        
+                        
+                        
+keytool -genkeypair 
+    -alias tomcat 
+    -keyalg RSA 
+    -keysize 2048 
+    -storetype PKCS12 
+    -keystore keystore.p12 
+    -validity 3650                        
 
 
