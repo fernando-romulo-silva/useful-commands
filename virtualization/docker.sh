@@ -1,8 +1,8 @@
-#--------------------------------------------------------------------------------------------------------
-# login on docker repository
+# --------------------------------------------------------------------------------------------------------
+# -------- login on docker repository
 docker login --username=fernandoromulosilva --password=123changeit
 
-#--------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------
 # -------- Images
 
 # pull a image
@@ -30,9 +30,11 @@ docker images
 # Create a image (from Dockerfile)
 docker build --tag image_name .
 
-
-# Create a image (from Dockerfile)
+# Create a image (from Dockerfile) 
 docker image build --file src/main/docker/Dockerfile.something --tag prefix/image_name .
+
+# Different repository <repository>:<tag>
+docker build --tag whenry/fedora-jboss:latest .
 
 
 # List prefix's images
@@ -63,7 +65,7 @@ docker image history web:latest
 docker image ls --digests alpine
 
 
-#--------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------
 # -------- Cleaning
 
 # Remove all unused volumes
@@ -91,7 +93,7 @@ docker kill `docker ps -aq`
 # Remove all unused thing
 docker system prune
 
-#--------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------
 # -------- Containers
 
 # Run the image

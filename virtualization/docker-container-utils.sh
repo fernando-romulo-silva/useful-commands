@@ -60,13 +60,13 @@ $ docker run --detach --name graphana-server --publish 3000:3000 grafana/grafana
 #
 # ===============================================================================
 # Prometeus
-# user and password: admin
+# 
 #
-$ docker run --detach --name=prometheus --publish 9090:9090 --volume src/main/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml `
+$ docker run --detach --name=prometheus --publish 9090:9090 --volume src/main/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml
 #
 #
 # ===============================================================================
 # Mongo DB
 # 127.0.0.1:27017
 #
-$ docker run --name test-mongo --detach  --env MONGO_INITDB_ROOT_USERNAME=root --env MONGO_INITDB_ROOT_PASSWORD=root --env MONGO_INITDB_DATABASE=testdb --publish 27017:27017 --publish 28017:28017 mongo:latest
+$ docker run --name test-mongo --detach --env MONGO_INITDB_ROOT_USERNAME=root --env MONGO_INITDB_ROOT_PASSWORD=root --env MONGO_INITDB_DATABASE=testdb --publish 27017:27017 --publish 28017:28017 mongo:latest
