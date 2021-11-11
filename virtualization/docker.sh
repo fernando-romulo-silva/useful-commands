@@ -157,6 +157,8 @@ docker network inspect localnet
 # list all local networks
 docker network ls
 
+# list all container on network
+docker network inspect -f '{{json .Containers}}' c6b0cccfd892 | jq '.[] | .Name + ":" + .IPv4Address'
 
 # -------------------------------------------------------------------------------------------------------
 # -------- Show the logs
