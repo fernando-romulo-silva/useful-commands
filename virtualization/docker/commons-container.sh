@@ -1,5 +1,5 @@
 # ===============================================================================
-# Postgree
+# PostgreSQL
 
 $ docker run --name test-postgres --env POSTGRES_DB=postgres-db --env POSTGRES_USER=user --env POSTGRES_PASSWORD=user --detach --publish 5432:5432 postgres:latest
 #
