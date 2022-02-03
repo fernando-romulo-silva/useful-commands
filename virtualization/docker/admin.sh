@@ -15,6 +15,17 @@ $ docker logs jmodular-java-tests-1
 # --follow command will continue streaming the new output
 docker logs --follow books-database
 
+# -------------------------------------------------------------------------------------------------------
+# -------- Docker PS
+# Show the running container
+$ docker ps
+
+CONTAINER ID   IMAGE       COMMAND                  CREATED        STATUS         PORTS                                                  NAMES
+7a38e315e870   mysql:5.7   "docker-entrypoint.s…"   6 months ago   Up 3 seconds   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   murachs-mysql
+
+# filtering
+$ docker ps --filter "label=a=1" --filter "label=b=2"
+
 
 # -------------------------------------------------------------------------------------------------------
 # -------- Debuging docker
@@ -61,22 +72,6 @@ $ docker volume inspect myvolume # volume
 ]
 ...
 # -------------------------------------------------------------------------------------------------------
-# -------- Restarting Policy
-$ ​docker run --detach --restart unless-stopped redis
-
-# The value of the --restart flag can be any of the following:
-#
-# * no : Do not automatically restart the container. (the default)
-# 
-# * on-failure : Restart the container if it exits due to an error, which manifests as a non-zero exit code.
-# 
-# * always : Always restart the container if it stops. If it is manually stopped, it is restarted only when Docker 
-# daemon restarts or the container itself is manually restarted.
-# 
-# * unless-stopped : Similar to always, except that when the container is stopped (manually or otherwise), 
-# it is not restarted even after Docker daemon restarts.
-
-# -------------------------------------------------------------------------------------------------------
 # -------- Label 
 # Labels are used in Dockerfile to help organize your Docker Images.
 #
@@ -84,12 +79,11 @@ $ ​docker run --detach --restart unless-stopped redis
 $ docker run my-image:latest --label=com.example.demo-label=example-value
 
 # docker file
-#  
 FROM ubuntu:latest
 LABEL "website.name"="geeksforgeeks website"
 
 # filtering
-# docker ps --filter "label=a=1" --filter "label=b=2"
+$ docker ps --filter "label=a=1" --filter "label=b=2"
 
 # --------------------------------------------------------------------------------------------------------
 # -------- Cleaning
@@ -110,17 +104,12 @@ docker volume ls -qf dangling=true | xargs -r docker volume rm
 # Delete exited containers
 docker rm `docker ps -aq`
 
-
-# kill all running containers 
-docker kill `docker ps -aq`
-
-
 # Remove all unused thing
 docker system prune
 
 # -------------------------------------------------------------------------------------------------------
-# For monitoring docker 
 # -------- Stats
+#  
 $ docker stats
 
 CONTAINER ID        NAME                                    CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
@@ -145,6 +134,7 @@ Shell 1: (Again .. now showing events):
 2017-01-05T00:36:04.795031609+08:00 container start 0fdb...ff37 (image=alpine:latest, name=test)
 
 
+# -------------------------------------------------------------------------------------------------------
 # ----------- DNS
 # change the dns
 $ sudo dockerd --dns 8.8.8.8

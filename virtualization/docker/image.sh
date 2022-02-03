@@ -7,6 +7,7 @@ $ docker pull ubuntu:16.04
 $ docker image pull gcr.io/google-containers/git-sync:v3.1.5
 
 
+# -------------------------------------------------------------------------------------------------------
 # --------- History
 # Docker history show the history of an image.
 
@@ -22,66 +23,67 @@ eca5cc474853   2 days ago     /bin/sh -c #(nop) COPY dir:4d2e32e4cc3638b73…   
 
 
 
-
-
+# -------------------------------------------------------------------------------------------------------
 # --------- Push
 # Docker images are pushed to Docker Hub through the docker push command.
 # docker push <REGISTRY_HOST>:<REGISTRY_PORT>/<APPNAME>:<APPVERSION> 
 $ docker push repo.company.com:3456/myapp:0.1
 
+# -------------------------------------------------------------------------------------------------------
+# --------- Tag an image
+$ docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+# To tag a local image with ID “0e5574283393” into the “fedora” repository with “version1.0”:
+$ docker tag 0e5574283393 fedora/httpd:version1.0
+
+# To tag a local image with name “httpd” into the “fedora” repository with “version1.0”:
+$ docker tag httpd fedora/httpd:version1.0 
+
+# 
+$ docker image tag web:latest nigelpoulton/web:latest
+
+# -------------------------------------------------------------------------------------------------------
+# --------- List Images
+$ docker image ls
+# 
+$ docker images
+
+# List prefix's images
+$ docker image ls | grep prefix/
 
 
+# -------------------------------------------------------------------------------------------------------
+# --------- Create
+# Create a image (from root Dockerfile)
+$ docker build --tag image_name .
 
-
-
-
-# tag an image
-docker image tag <current-tag>:<new-tag> <repository>:<new-tag>
-
-docker image tag web:latest nigelpoulton/web:latest
-
-
-# list images
-docker image ls
-
-# or
-docker images
-
-
-# Create a image (from Dockerfile)
-docker build --tag image_name .
-
-# Create a image (from Dockerfile) 
-docker image build --file src/main/docker/Dockerfile.something --tag prefix/image_name .
-
+# Create a image (from especific Dockerfile) 
+$ docker image build --file src/main/docker/Dockerfile.something --tag prefix/image_name .
 
 # Different repository <hub-user>/<repo-name>:<tag>
 docker build --tag whenry/fedora-jboss:latest .
 
 
-# List prefix's images
-docker image ls | grep prefix/
-
 
 # Remove an image
-docker rmi 59ada6b2b508
+$ docker rmi 59ada6b2b508
 
 
 # create a image from container
-docker container commit 59ada6b2b508 name-image
+$ docker container commit 59ada6b2b508 name-image
 
 
 # search images on the registers
-docker search openjdk
+$ docker search openjdk
 
 
 # show the image's layer
-docker image inspect
+$ docker image inspect
 
 
 # show the image's layer
-docker image history web:latest
+$ docker image history web:latest
 
 
 # get image digest
-docker image ls --digests alpine
+$ docker image ls --digests alpine

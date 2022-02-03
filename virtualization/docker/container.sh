@@ -3,23 +3,50 @@
 # docker stop <container_id|container_name>
 $ docker stop murachs-mysql 
 
+# -------------------------------------------------------------------------------------------------------
 # -------- Start a container
 # docker start <container_id|container_name>
 $ docker start murachs-mysql
 
+# -------------------------------------------------------------------------------------------------------
 # -------- Kill a container
 # docker kill <container_id|container_name>
 $ docker kill murachs-mysql
 
+# kill all running containers 
+docker kill `docker ps -aq`
+
+# -------------------------------------------------------------------------------------------------------
 # -------- Remove a container
 # docker rm <container_id|container_name>
 $ docker rm hopeful_wright
 
+
+# -------------------------------------------------------------------------------------------------------
 # -------- Create a container
 # docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
 $ docker run --detach --name ubuntuDNS --dns="1.0.0.1" ubuntu
 
 $ docker run --detach --publish 80:80 apache
+
+
+# -------------------------------------------------------------------------------------------------------
+# -------- Restarting Policy
+$ ​docker run --detach --restart unless-stopped redis
+
+$ docker run httpd:latest --restart on-failure:5
+
+# The value of the --restart flag can be any of the following:
+#
+# * no : Do not automatically restart the container. (the default)
+# 
+# * on-failure : Restart the container if it exits due to an error, which manifests as a non-zero exit code.
+# 
+# * always : Always restart the container if it stops. If it is manually stopped, it is restarted only when Docker 
+# daemon restarts or the container itself is manually restarted.
+# 
+# * unless-stopped : Similar to always, except that when the container is stopped (manually or otherwise), 
+# it is not restarted even after Docker daemon restarts.
 
 
 
