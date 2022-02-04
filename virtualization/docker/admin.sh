@@ -26,6 +26,11 @@ CONTAINER ID   IMAGE       COMMAND                  CREATED        STATUS       
 # filtering
 $ docker ps --filter "label=a=1" --filter "label=b=2"
 
+# All containers
+$ docker ps --all
+# or
+$ docker container ls --all
+
 
 # -------------------------------------------------------------------------------------------------------
 # -------- Debuging docker

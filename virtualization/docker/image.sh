@@ -10,7 +10,6 @@ $ docker image pull gcr.io/google-containers/git-sync:v3.1.5
 # -------------------------------------------------------------------------------------------------------
 # --------- History
 # Docker history show the history of an image.
-
 $ docker history modular-java-tests-iso:latest
 IMAGE          CREATED        CREATED BY                                      SIZE      COMMENT
 fd809ad91774   2 days ago     /bin/sh -c #(nop)  ENTRYPOINT ["/bin/sh" "-c…   0B        

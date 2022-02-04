@@ -23,14 +23,16 @@ $ docker rm hopeful_wright
 
 
 # -------------------------------------------------------------------------------------------------------
-# -------- Create a container
+# -------- Create a stopped container
 # docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
+$ docker container create --name ubuntuDNS --dns="1.0.0.1" ubuntu
+
+
+# -------- Create and a container
 $ docker run --detach --name ubuntuDNS --dns="1.0.0.1" ubuntu
 
 $ docker run --detach --publish 80:80 apache
 
-
-# -------------------------------------------------------------------------------------------------------
 # -------- Restarting Policy
 $ ​docker run --detach --restart unless-stopped redis
 
