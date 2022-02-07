@@ -39,7 +39,7 @@ $ docker tag 0e5574283393 fedora/httpd:version1.0
 $ docker tag httpd fedora/httpd:version1.0 
 
 # 
-$ docker image tag web:latest nigelpoulton/web:latest
+$ docker tag web:latest nigelpoulton/web:latest
 
 # -------------------------------------------------------------------------------------------------------
 # --------- List Images
@@ -63,26 +63,20 @@ $ docker image build --file src/main/docker/Dockerfile.something --tag prefix/im
 docker build --tag whenry/fedora-jboss:latest .
 
 
-
 # Remove an image
 $ docker rmi 59ada6b2b508
-
 
 # create a image from container
 $ docker container commit 59ada6b2b508 name-image
 
-
 # search images on the registers
 $ docker search openjdk
-
 
 # show the image's layer
 $ docker image inspect
 
-
 # show the image's layer
 $ docker image history web:latest
-
 
 # get image digest
 $ docker image ls --digests alpine

@@ -28,10 +28,15 @@ $ docker rm hopeful_wright
 $ docker container create --name ubuntuDNS --dns="1.0.0.1" ubuntu
 
 
-# -------- Create and a container
+# -------- Create and run container
 $ docker run --detach --name ubuntuDNS --dns="1.0.0.1" ubuntu
 
 $ docker run --detach --publish 80:80 apache
+
+# -i and -t
+$ docker run ---interactive --tty alpine /bin/ash
+
+
 
 # -------- Restarting Policy
 $ ​docker run --detach --restart unless-stopped redis
