@@ -50,6 +50,17 @@ $ docker images
 # List prefix's images
 $ docker image ls | grep prefix/
 
+# get image digest
+$ docker image ls --digests alpine
+
+# -------------------------------------------------------------------------------------------------------
+# --------- Inspect Images
+# Docker inspect provides detailed information on constructs controlled by Docker.
+
+$ docker inspect --format '{{.Config.Cmd}}' <image:tag>
+
+$ docker inspect --format '{{.Config.Entrypoint}}' <image:tag>
+
 
 # -------------------------------------------------------------------------------------------------------
 # --------- Create
@@ -60,11 +71,34 @@ $ docker build --tag image_name .
 $ docker image build --file src/main/docker/Dockerfile.something --tag prefix/image_name .
 
 # Different repository <hub-user>/<repo-name>:<tag>
-docker build --tag whenry/fedora-jboss:latest .
+$ docker build --tag whenry/fedora-jboss:latest .
 
 
+# -------------------------------------------------------------------------------------------------------
+# --------- Remove
 # Remove an image
 $ docker rmi 59ada6b2b508
+
+# or
+
+$ docker image rm mysql
+
+Untagged: mysql:latest
+Untagged: mysql@sha256:feada149cb8ff54eade1336da7c1d080c4a1c7ed82b5e320efb5beebed85ae8c
+
+Options:
+
+--force , -f    Force removal of the image
+--no-prune		Do not delete untagged parents
+
+# -------------------------------------------------------------------------------------------------------
+# --------- History
+# show the image's layer
+$ docker image history web:latest
+
+
+
+
 
 # create a image from container
 $ docker container commit 59ada6b2b508 name-image
@@ -75,8 +109,3 @@ $ docker search openjdk
 # show the image's layer
 $ docker image inspect
 
-# show the image's layer
-$ docker image history web:latest
-
-# get image digest
-$ docker image ls --digests alpine

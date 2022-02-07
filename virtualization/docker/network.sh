@@ -2,6 +2,10 @@
 # -------- Create network
 $ docker network create --driver bridge localnet
 
+# bridge : The default network driver. 
+# If you don't specify a driver, this is the type of network you are creating. 
+# Bridge networks are usually used when your applications run in standalone containers that need to communicate.
+
 $ docker network create --driver macvlan --subnet=10.0.0.0/24 --ip-range=10.0.0.0/25 --gateway=10.0.0.1 -o parent=eth0.100 macvlan100
 
 # -------------------------------------------------------------------------------------------------------

@@ -2,6 +2,64 @@
 # -------- login on docker repository
 $ docker login --username=fernandoromulosilva --password=123changeit
 
+# --------------------------------------------------------------------------------------------------------
+# -------- Show info about docker that is installed in your system
+$ docker info
+Client:
+ Context:    default
+ Debug Mode: false
+
+Server:
+ Containers: 8
+  Running: 0
+  Paused: 0
+  Stopped: 8
+ Images: 384
+ Server Version: 20.10.7
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 1
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 io.containerd.runtime.v1.linux runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 
+ runc version: 
+ init version: 
+ Security Options:
+  apparmor
+  seccomp
+   Profile: default
+ Kernel Version: 5.4.0-97-generic
+ Operating System: Ubuntu 20.04.3 LTS
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 24
+ Total Memory: 62.82GiB
+ Name: pc02
+ ID: TWEW:67BH:XQTU:YS4Z:7AN4:RUS3:WLSI:ZAA3:SGEJ:NO26:ZX3W:4GSN
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Username: fernandoromulosilva
+ Registry: https://index.docker.io/v1/
+ Labels:
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+WARNING: No swap limit support
+
+ 
 
 # --------------------------------------------------------------------------------------------------------
 # -------- Check docker server and client

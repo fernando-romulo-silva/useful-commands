@@ -56,3 +56,11 @@ ARG VAR_NAME 5
 # but, argument when you build your image
 --build-arg VAR_NAME=6
 
+# --------------------------------------------------------------------------------------------------------
+# -------- CMD 
+# sets default command and/or parameters, which can be overwritten from command line when docker container runs.
+
+# --------------------------------------------------------------------------------------------------------
+# -------- ENTRYPOINT 
+# configures a container that will run as an executable.
+

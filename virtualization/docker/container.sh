@@ -29,19 +29,34 @@ $ docker container create --name ubuntuDNS --dns="1.0.0.1" ubuntu
 
 
 # -------- Create and run container
+# If the image doesnt's exist, try to pull
 $ docker run --detach --name ubuntuDNS --dns="1.0.0.1" ubuntu
 
-$ docker run --detach --publish 80:80 apache
+$ docker run --detach --limit-memory 4GB --reserve-memory 2GB --publish 80:80 apache 
 
+# iteractive bash (ash)
 # -i and -t
 $ docker run ---interactive --tty alpine /bin/ash
 
+# -i flag connects the container to the terminal
+# --rm removes the container's file system after tthe container exits
+# -p 8082:8080 exposes the port 8082 externally, thus mapping to port 8080 on the host machine
 
+
+# Create if don't exists and Run
+$ docker run --detach --publish 80:80 --name container_name prefix/image_name
+
+# exclude after exit
+$ docker run --interactive --rm -p 80:80 --rm --name container_name prefix/image_name
+
+# add the host to access
+$ docker run --detach -p 80:80 --name container_name prefix/image_name --add-host host.docker.internal:host-gateway
 
 # -------- Restarting Policy
+# If you manually stop a container, its restart policy is ignored until the Docker daemon restarts or the container is manually restarted.
 $ ​docker run --detach --restart unless-stopped redis
 
-$ docker run httpd:latest --restart on-failure:5
+$ docker run httpd:latest --restart on-failure:5  # always | unless-stopped | on-failure
 
 # The value of the --restart flag can be any of the following:
 #
@@ -61,23 +76,6 @@ $ docker run httpd:latest --restart on-failure:5
 
 
 
-
-
-# Create if don't exists and Run
-docker run --detach -p 80:80 --name container_name prefix/image_name
-
-# exclude after exit
-docker run --interactive --rm -p 80:80 --rm --name container_name prefix/image_name
-
-# add the host to access
-docker run --detach -p 80:80 --name container_name prefix/image_name --add-host host.docker.internal:host-gateway
-
-# retarts policies
-docker container run --name neversaydie -it --restart always alpine sh # always | unless-stopped | on-failure
-
-# -i flag connects the container to the terminal
-# --rm removes the container's file system after tthe container exits
-# -p 8082:8080 exposes the port 8082 externally, thus mapping to port 8080 on the host machine
 
 
 # Lists containers
