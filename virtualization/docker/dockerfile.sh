@@ -4,6 +4,11 @@
 FROM eclipse-temurin:17.0.1_12-jre-alpine as builder
 
 # --------------------------------------------------------------------------------------------------------
+# The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, 
+# COPY and ADD instructions that follow it in the Dockerfile. 
+WORKDIR /usr/src/app
+
+# --------------------------------------------------------------------------------------------------------
 # -------- EXPOSE
 # It documents ports intended for publishing at the time of running a container.
 EXPOSE 5000 # it's not expose, only document

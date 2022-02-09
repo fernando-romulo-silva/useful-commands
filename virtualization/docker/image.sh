@@ -6,6 +6,10 @@ $ docker pull ubuntu:16.04
 # docker image pull <url-register>/<repository>:<tag>
 $ docker image pull gcr.io/google-containers/git-sync:v3.1.5
 
+# --------------------------------------------------------------------------------------------------------
+# --------- Save
+# Save one or more images to a tar archive
+$ docker save modular-java-tests-iso > modular-java-tests-iso.tar
 
 # -------------------------------------------------------------------------------------------------------
 # --------- History
@@ -52,6 +56,9 @@ $ docker image ls | grep prefix/
 
 # get image digest
 $ docker image ls --digests alpine
+
+# List images only latest
+docker image ls --filter=reference="*:latest"
 
 # -------------------------------------------------------------------------------------------------------
 # --------- Inspect Images

@@ -21,7 +21,6 @@ docker kill `docker ps -aq`
 # docker rm <container_id|container_name>
 $ docker rm hopeful_wright
 
-
 # -------------------------------------------------------------------------------------------------------
 # -------- Create a stopped container
 # docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
@@ -71,29 +70,14 @@ $ docker run httpd:latest --restart on-failure:5  # always | unless-stopped | on
 # it is not restarted even after Docker daemon restarts.
 
 
-
-
-
-
-
-
-
+# -------------------------------------------------------------------------------------------------------
 # Lists containers
-docker container ls
-
-# List images only latest
-docker image ls --filter=reference="*:latest"
-
-# attach it
-docker container exec -it container_name bash
-
-# one and only process running inside of the container!!!
-ps -elf
-
-# killing the main process in the container will kill the container
+$ docker container ls
 
 
-# Use apt-get install no-install-recommends makes sure that apt only installs main dependencies
+# -------------------------------------------------------------------------------------------------------
+# Create a new image from a container’s changes
+$ docker commit c3f279d17e0a  svendowideit/testimage:version3
 
 
 # -------------------------------------------------------------------------------------------------------
@@ -105,3 +89,5 @@ docker container stop percy
 docker container run --detach --name webserver -p 80:8080 nigelpoulton/pluralsight-docker-ci
 
 docker network create --detach macvlan --subnet=10.0.0.0/24 --ip-range=10.0.0.0/25 --gateway=10.0.0.1 -o parent=eth0.100 macvlan100
+
+
