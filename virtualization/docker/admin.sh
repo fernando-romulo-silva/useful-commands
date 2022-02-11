@@ -234,4 +234,11 @@ $ docker stop test
 # change the dns
 $ sudo dockerd --dns 8.8.8.8
 
-
+# -------------------------------------------------------------------------------------------------------
+# ----------- Disk Usage
+$ docker system df
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          92        6         22.05GB   21.02GB (95%)
+Containers      8         0         9B        9B (100%)
+Local Volumes   3         1         220.2MB   92B (0%)
+Build Cache     78        0         1.212GB   1.212GB

@@ -30,10 +30,13 @@ $ docker port murachs-mysql
 3306/tcp -> 0.0.0.0:3306
 3306/tcp -> :::3306
 
-
 # or 
 
 $ docker inspect --format='{{.NetworkSettings.Ports}}' murachs-mysql
+
+# or
+
+$ docker ps
 
 # -------------------------------------------------------------------------------------------------------
 # To connect a running container to an existing user-defined bridge

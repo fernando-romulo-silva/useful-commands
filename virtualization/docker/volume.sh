@@ -29,3 +29,12 @@ $ docker volume rm myvol
 # --------------------------------------------------------------------------------------------------------
 # Delete All Volumes at Once
 $ docker volume prune
+
+
+# --------------------------------------------------------------------------------------------------------
+# List volumes for specific volumes
+$ docker inspect -f '{{ .Volumes }}' nginx
+
+Or
+
+$ docker volume inspect nginx-volume

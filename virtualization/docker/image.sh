@@ -11,6 +11,9 @@ $ docker image pull gcr.io/google-containers/git-sync:v3.1.5
 # Save one or more images to a tar archive
 $ docker save modular-java-tests-iso > modular-java-tests-iso.tar
 
+# To load
+$ docker load -i modular-java-tests-iso.tar
+
 # -------------------------------------------------------------------------------------------------------
 # --------- History
 # Docker history show the history of an image.
@@ -98,10 +101,10 @@ Options:
 --force , -f    Force removal of the image
 --no-prune		Do not delete untagged parents
 
-# -------------------------------------------------------------------------------------------------------
-# --------- History
-# show the image's layer
-$ docker image history web:latest
+
+
+
+
 
 
 
