@@ -8,6 +8,19 @@ $ docker network create --driver bridge localnet
 
 $ docker network create --driver macvlan --subnet=10.0.0.0/24 --ip-range=10.0.0.0/25 --gateway=10.0.0.1 -o parent=eth0.100 macvlan100
 
+# -------- Commons options
+# -d -> --driver
+# -o -> --opt
+$ docker network create -d overlay -o encrypted=true
+
+# -------- Ingress mode
+$ docker network create --driver overlay \
+  --subnet=10.11.0.0/16 \
+  --ingress \
+  --opt com.docker.network.driver.mtu=9216 \
+  --opt encrypted=true \
+  my-ingress-network
+
 # -------------------------------------------------------------------------------------------------------
 # -------- Create a container with a network already exists
 $ docker container run --detach --name c1 --network localnet alpine sleep 1d
