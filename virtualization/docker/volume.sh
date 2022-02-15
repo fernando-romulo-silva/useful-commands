@@ -2,6 +2,7 @@
 # -------- Create volume
 $ docker volume create myvol
 
+
 # --------------------------------------------------------------------------------------------------------
 # -------- Connect Volume From another container
 $ docker run --name=d1 --volume /svr1 busybox sh -c 'touch /svr1/some_data1'
@@ -10,6 +11,16 @@ $ docker run --name=d2 --volume /svr2 busybox sh -c 'touch /svr2/some_data2'
 
 # connect to two volumes, d1 and d2
 $ docker run --rm --volumes-from=d1 --volumes-from=d2 busybox sh -c 'find -name some_data'
+
+# -------- Connect on read only volume
+$ docker volume create volume-name
+
+
+$ docker run -v volume-name:/path/in/container:ro myImage
+
+# or
+
+$ docker run --mount source=volume-name,destination=/path/in/container,readonly my/image
 
 # --------------------------------------------------------------------------------------------------------
 # List Volume

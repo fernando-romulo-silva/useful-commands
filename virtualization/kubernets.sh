@@ -1,3 +1,7 @@
+#
+kubectl port-forward container-name-34545f33-34dfg --namespace my-name-space 9010:9010
+
+
 # check the version
 kubectl version
 

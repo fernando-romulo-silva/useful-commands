@@ -6,6 +6,19 @@ $ docker pull ubuntu:16.04
 # docker image pull <url-register>/<repository>:<tag>
 $ docker image pull gcr.io/google-containers/git-sync:v3.1.5
 
+
+# --------------------------------------------------------------------------------------------------------
+# --------- BUILD
+# Create a image (from root Dockerfile)
+$ docker build --tag image_name .
+
+# Create a image (from especific Dockerfile) 
+$ docker image build --file src/main/docker/Dockerfile.something --tag prefix/image_name .
+
+# Different repository <hub-user>/<repo-name>:<tag>
+$ docker build --tag whenry/fedora-jboss:latest .
+
+
 # --------------------------------------------------------------------------------------------------------
 # --------- Save
 # Save one or more images to a tar archive
@@ -73,18 +86,6 @@ $ docker inspect --format '{{.Config.Entrypoint}}' <image:tag>
 
 
 # -------------------------------------------------------------------------------------------------------
-# --------- Create
-# Create a image (from root Dockerfile)
-$ docker build --tag image_name .
-
-# Create a image (from especific Dockerfile) 
-$ docker image build --file src/main/docker/Dockerfile.something --tag prefix/image_name .
-
-# Different repository <hub-user>/<repo-name>:<tag>
-$ docker build --tag whenry/fedora-jboss:latest .
-
-
-# -------------------------------------------------------------------------------------------------------
 # --------- Remove
 # Remove an image
 $ docker rmi 59ada6b2b508
@@ -96,26 +97,19 @@ $ docker image rm mysql
 Untagged: mysql:latest
 Untagged: mysql@sha256:feada149cb8ff54eade1336da7c1d080c4a1c7ed82b5e320efb5beebed85ae8c
 
-Options:
+# Options:
 
 --force , -f    Force removal of the image
 --no-prune		Do not delete untagged parents
 
 
-
-
-
-
-
-
-
-
+# -------------------------------------------------------------------------------------------------------
+# --------- COMMIT
 # create a image from container
 $ docker container commit 59ada6b2b508 name-image
 
+# -------------------------------------------------------------------------------------------------------
+# --------- SEARCH
 # search images on the registers
 $ docker search openjdk
-
-# show the image's layer
-$ docker image inspect
 

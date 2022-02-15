@@ -3,10 +3,13 @@
 # sets a base image that can be used as a platform to begin builds.
 FROM eclipse-temurin:17.0.1_12-jre-alpine as builder
 
+
 # --------------------------------------------------------------------------------------------------------
+# -------- WORKDIR
 # The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, 
 # COPY and ADD instructions that follow it in the Dockerfile. 
 WORKDIR /usr/src/app
+
 
 # --------------------------------------------------------------------------------------------------------
 # -------- EXPOSE
