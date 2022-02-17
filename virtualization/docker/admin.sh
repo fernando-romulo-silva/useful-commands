@@ -139,6 +139,19 @@ $ docker container ls --all
   "hosts": ["tcp://192.168.59.3:2376"]
 }
 
+# -------------------------------------------------------------------------------------------------------
+# -------- Configuring
+# create
+$ docker config create my_config ./config.json
+
+$ docker config create \
+    --label env=dev \
+    --label rev=20170324 \
+    my_config ./config.json
+
+# list
+$ docker config ls
+
 
 # -------------------------------------------------------------------------------------------------------
 # -------- Get low-level information Docker objects (container, image, networks, etc)
@@ -187,31 +200,31 @@ $ docker ps --filter "label=a=1" --filter "label=b=2"
 # -------- Cleaning
 
 # Remove all unused volumes
-docker volume prune
+$ docker volume prune
 
 
 # Remove all unused images
-docker images -qf dangling=true | xargs docker rmi
+$ docker images -qf dangling=true | xargs docker rmi
 
 # or
-docker prune
+$ docker prune
 
 # Remove dangling volumes
-docker volume ls -qf dangling=true | xargs -r docker volume rm
+$ docker volume ls -qf dangling=true | xargs -r docker volume rm
 
 # Delete exited containers
-docker rm `docker ps -aq`
+$ docker rm `docker ps -aq`
 
 # Remove all unused thing
-docker system prune
+$ docker system prune
 
 # -------------------------------------------------------------------------------------------------------
-# -------- Stats
+# -------- Stats - It is used for the information of the container
 #  
 $ docker stats
 
-CONTAINER ID        NAME                                    CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
-b95a83497c91        awesome_brattain                        0.28%               5.629MiB / 1.952GiB   0.28%               916B / 0B           147kB / 0B          9
+CONTAINER ID    NAME                     CPU %   MEM USAGE / LIMIT     MEM %   NET I/O      BLOCK I/O     PIDS
+b95a83497c91    awesome_brattain         0.28%   5.629MiB / 1.952GiB   0.28%   916B / 0B    147kB / 0B    9
 
 
 # -------- Events 
