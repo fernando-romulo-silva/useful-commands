@@ -7,7 +7,7 @@ $ gcloud auth login
 # update the components
 $ gcloud components update
 
-# show the configuratio list
+# show the configuration list
 $ gcloud config configurations list
 
 # set auth configs for application GOOGLE_APPLICATION_CREDENTIALS
