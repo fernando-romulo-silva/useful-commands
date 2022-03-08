@@ -14,7 +14,7 @@ $ docker start murachs-mysql
 $ docker kill murachs-mysql
 
 # kill all running containers 
-docker kill `docker ps -aq`
+$ docker kill `docker ps -aq`
 
 # -------------------------------------------------------------------------------------------------------
 # -------- Remove a container
@@ -86,7 +86,7 @@ $ docker commit c3f279d17e0a  svendowideit/testimage:version3
 
 docker container stop percy
 
-docker container run --detach --name webserver -p 80:8080 nigelpoulton/pluralsight-docker-ci
+docker container run --detach --name webserver --publish 80:8080 nigelpoulton/pluralsight-docker-ci
 
 docker network create --detach macvlan --subnet=10.0.0.0/24 --ip-range=10.0.0.0/25 --gateway=10.0.0.1 -o parent=eth0.100 macvlan100
 
