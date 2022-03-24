@@ -18,7 +18,6 @@ $ docker image build --file src/main/docker/Dockerfile.something --tag prefix/im
 # Different repository <hub-user>/<repo-name>:<tag>
 $ docker build --tag whenry/fedora-jboss:latest .
 
-
 # --------------------------------------------------------------------------------------------------------
 # --------- Save
 # Save one or more images to a tar archive
@@ -40,6 +39,8 @@ eca5cc474853   2 days ago     /bin/sh -c #(nop) COPY dir:4d2e32e4cc3638b73…   
 6dbb9cc54074   9 months ago   /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B        
 <missing>      9 months ago   /bin/sh -c #(nop) ADD file:8ec69d882e7f29f06…   5.61MB 
 
+# -------- Convert Image to Dockerfile
+$ docker image history --no-trunc image-service-converter-iso $argv  | tac | tr -s ' ' | cut -d " " -f 5- | sed 's,^/bin/sh -c #(nop) ,,g' | sed 's,^/bin/sh -c,RUN,g' | sed 's, && ,\n  & ,g' | sed 's,\s*[0-9]*[\.]*[0-9]*\s*[kMG]*B\s*$,,g' | head -n -1
 
 
 # -------------------------------------------------------------------------------------------------------
