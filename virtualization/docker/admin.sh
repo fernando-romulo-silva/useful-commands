@@ -124,6 +124,9 @@ $ docker ps --all
 # or
 $ docker container ls --all
 
+# Show the container sizes
+$ docker ps --size
+
 
 # -------------------------------------------------------------------------------------------------------
 # -------- Debuging docker
