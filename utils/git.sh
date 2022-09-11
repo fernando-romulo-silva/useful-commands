@@ -1,11 +1,13 @@
 # generate ssh key
-$ ss-keygen -t ed25519 -C "fernando.romulo.silva@gmail.com" -f ~/.ssh/id_rsa_github_fernando.romulo.silva
+$ ssh-keygen -t ed25519 -C "fernando.romulo.silva@gmail.com" -f ~/.ssh/id_rsa_github_fernando.romulo.silva
+
+$ ssh -i ~/.ssh/id_rsa_github_fernando.romulo.silva -vT git@github.com
 
 # check ssh agent
 $ eval "$(ssh-agent -s)"
 
 # add key to ssh list
-$ ssh-add ~/.ssh/id_resa_github_fernando.romulo.silva
+$ ssh-add ~/.ssh/id_rsa_github_fernando.romulo.silva
 
 # List the keys
 $ ssh-add -L
@@ -14,25 +16,31 @@ $ ssh-add -L
 $ ssh-add -D ~/.ssh/id_rsa_github_fernando.romulo.silva
 
 # copy to transfer area
-$ clip < ~/.ssh/id_rsa_github_fernando.romulo.silva.pub
+$ cat ~/.ssh/id_rsa_github_fernando.romulo.silva.pub
 # add it to server
+
 
 
 # Inside the ~/ssh folder create a 'config' file:
 #-------------------------------------------------------------
 # Personal github account
 Host github.com-fernando.romulo.silva
+HostName ssh.github.com
 PreferredAuthentications publickey
 User git
 AddkeystoAgent yes
-IdentifyFile ~/.ssh/id_rsa_github_fernando.romulo.silva
+IdentityFile ~/.ssh/id_rsa_github_fernando.romulo.silva
 
 Host bitbucket.org-fernando.romulo.silva
+HostName ssh.bitbucket.org
 PreferredAuthentications publickey
 User git
 AddkeystoAgent yes
-IdentifyFile ~/.ssh/id_rsa_bitbuket_fernando.romulo.silva
+IdentityFile ~/.ssh/id_rsa_bitbuket_fernando.romulo.silva
 #-------------------------------------------------------------
+
+# add trust host 
+$ ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
 # check connection with server
 $ ssh -Tvvv git@github.com
