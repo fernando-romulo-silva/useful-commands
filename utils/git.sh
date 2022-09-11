@@ -19,8 +19,6 @@ $ ssh-add -D ~/.ssh/id_rsa_github_fernando.romulo.silva
 $ cat ~/.ssh/id_rsa_github_fernando.romulo.silva.pub
 # add it to server
 
-
-
 # Inside the ~/ssh folder create a 'config' file:
 #-------------------------------------------------------------
 # Personal github account
@@ -36,7 +34,7 @@ HostName ssh.bitbucket.org
 PreferredAuthentications publickey
 User git
 AddkeystoAgent yes
-IdentityFile ~/.ssh/id_rsa_bitbuket_fernando.romulo.silva
+IdentityFile ~/.ssh/id_rsa_bitbucket_fernando.romulo.silva
 #-------------------------------------------------------------
 
 # add trust host 
