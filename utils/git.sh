@@ -46,7 +46,7 @@ $ ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 $ ssh -Tvvv git@github.com
 
 # Clone
-$ git clone git@github.com-fernando.romulo.silva:fernando.romulo.silva/fernando-romulo-silva.git
+$ git clone git@github.com:fernando-romulo-silva/fernando-romulo-silva.git
 
 # To specific repository add the user and email to match with server
 $ git config user.name "Fernando Romulo da Silva"
