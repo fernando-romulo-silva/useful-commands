@@ -26,10 +26,19 @@ $ docker rm hopeful_wright
 # docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
 $ docker container create --name ubuntuDNS --dns="1.0.0.1" ubuntu
 
+# or
+
+$ docker create --name ubuntuDNS --dns="1.0.0.1" ubuntu
 
 # -------- Create and run container
 # If the image doesnt's exist, try to pull
+$ docker container run --detach --name ubuntuDNS --dns="1.0.0.1" ubuntu
+
+# or
+
 $ docker run --detach --name ubuntuDNS --dns="1.0.0.1" ubuntu
+
+# ----------
 
 $ docker run --detach --limit-memory 4GB --reserve-memory 2GB --publish 80:80 apache 
 
