@@ -1,14 +1,12 @@
-#!/bin/bash
-
 #### Convert all VOB (DVD) to MKV ##################################################################################################################
 
 # https://www.internalpointers.com/post/convert-vob-files-mkv-ffmpeg
 
 
 # get all files to one
-cat VTS_01_1.VOB VTS_01_2.VOB VTS_01_3.VOB VTS_01_4.VOB VTS_01_5.VOB > DVD01.VOB
+$ cat VTS_01_1.VOB VTS_01_2.VOB VTS_01_3.VOB VTS_01_4.VOB VTS_01_5.VOB > DVD01.VOB
 
-for f in *.VOB; do \
+$ for f in *.VOB; do \
    ffmpeg \
      -analyzeduration 100M -probesize 100M \
      -i "$f" \
@@ -24,7 +22,7 @@ for f in *.VOB; do \
      -hide_banner; 
 done
    
-for f in *.VOB; do \
+$ for f in *.VOB; do \
    ffmpeg \
      -analyzeduration 100M -probesize 100M \
      -i "$f" \
@@ -40,7 +38,7 @@ for f in *.VOB; do \
      -hide_banner; 
 done
 
-for f in *.VOB; do \
+$ for f in *.VOB; do \
    ffmpeg \
      -analyzeduration 100M -probesize 100M \
      -i "$f" \

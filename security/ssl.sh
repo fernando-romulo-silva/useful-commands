@@ -10,7 +10,7 @@
 #
 # Run the following command to create your 2048 bit keystore:
 
-echo y | keytool -genkeypair -dname "cn=Mark Jones, ou=JavaSoft, o=Sun, c=US" 
+$ echo y | keytool -genkeypair -dname "cn=Mark Jones, ou=JavaSoft, o=Sun, c=US" 
    -alias business
    -keysize 2048
    -keypass 123changeit
@@ -52,17 +52,17 @@ echo y | keytool -genkeypair -dname "cn=Mark Jones, ou=JavaSoft, o=Sun, c=US"
 # Generate a CSR (Certificate Signing Request) From the Keystore
 # To create your CSR, run the following command:
 
-keytool -certreq -keyalg RSA -alias business -file ~/certreq.csr -keystore ~/application.keystore -storepass 123456changeit
+$ keytool -certreq -keyalg RSA -alias business -file ~/certreq.csr -keystore ~/application.keystore -storepass 123456changeit
 
 
 # To find your CSR, enter the command:
 
-type ~/certreq.csr
+$ type ~/certreq.csr
 
 
 # To list 
 
-keytool -list -v -keystore ~/application.keystore 
+$ keytool -list -v -keystore ~/application.keystore 
 
 # Now the certreq.csr file can import the certificate into your client, most likely a browser, and start accessing your APIs
 
@@ -73,9 +73,9 @@ keytool -list -v -keystore ~/application.keystore
 # Import the Primary/Server Certificate, Root, and Intermediate CA Certificates to Keystore
 # Once the CA signed the certificate and share it with us, we need to import the certificate to the keystore for the private key entry we created.
 
-keytool -import -alias ssl -keystore ~/application.keystore -file ~/certreq.csr  
+$ keytool -import -alias ssl -keystore ~/application.keystore -file ~/certreq.csr  
 
-keytool -import -trustcacerts -alias ssl -file ~/certreq.csr -keystore ~/application.keystore
+$ keytool -import -trustcacerts -alias ssl -file ~/certreq.csr -keystore ~/application.keystore
 
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -83,14 +83,14 @@ keytool -import -trustcacerts -alias ssl -file ~/certreq.csr -keystore ~/applica
 #
 # To import an existing certificate signed by your own CA into a PKCS12 keystore using OpenSSL you would execute a command like:
 
-openssl pkcs12 -export -in mycert.crt -inkey mykey.key
+$ openssl pkcs12 -export -in mycert.crt -inkey mykey.key
                         -out mycert.p12 -name tomcat -CAfile myCA.crt
                         -caname root -chain
                         
                         
                         
                         
-keytool -genkeypair 
+$ keytool -genkeypair 
     -alias tomcat 
     -keyalg RSA 
     -keysize 2048 

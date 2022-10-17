@@ -2,7 +2,6 @@
 # -------- Create volume
 $ docker volume create myvol
 
-
 # --------------------------------------------------------------------------------------------------------
 # -------- Connect Volume From another container
 $ docker run --name=d1 --volume /svr1 busybox sh -c 'touch /svr1/some_data1'
@@ -40,7 +39,6 @@ $ docker volume rm myvol
 # --------------------------------------------------------------------------------------------------------
 # Delete All Volumes at Once
 $ docker volume prune
-
 
 # --------------------------------------------------------------------------------------------------------
 # List volumes for specific volumes
