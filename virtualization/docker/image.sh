@@ -85,6 +85,8 @@ $ docker inspect --format '{{.Config.Cmd}}' <image:tag>
 
 $ docker inspect --format '{{.Config.Entrypoint}}' <image:tag>
 
+$ docker inspect --format='{{range $key, $value := .Config.Labels}}{{$key}}={{$value}} {{end}}' <image:tag>
+
 
 # -------------------------------------------------------------------------------------------------------
 # --------- Remove

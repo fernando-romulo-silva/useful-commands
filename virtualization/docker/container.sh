@@ -91,9 +91,18 @@ $ docker run httpd:latest --restart on-failure:5  # always | unless-stopped | on
 
 
 # -------------------------------------------------------------------------------------------------------
-# Lists containers
+# Lists containers (only running) 
 $ docker container ls
 
+$ docker container ls --filter ancestor=image-service-converter
+
+# all containers
+$ docker container ls -a
+
+$ docker container ls --all
+
+# --- same result with ps
+$ docker ps --filter ancestor=image-service-converter
 
 # -------------------------------------------------------------------------------------------------------
 # Create a new image from a container’s changes
