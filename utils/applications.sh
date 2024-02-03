@@ -42,5 +42,18 @@ $ curl -H 'Content-Type: application/json' http://localhost:8080/authors
 # HTTP DELETE on a given URL
 $ curl -X DELETE http://localhost:8080/authors/1
 
-# Use jq to format the result
-$ curl http://localhost:8080/vintage-store/artists | jq
+# version
+$ curl --version
+
+# verbose mode on
+$ curl -v http://localhost:8080/authors
+
+# Get(default) in the HTTP Header.
+$ curl -H "Accept: application/json" http://localhost:8080/metrics/application
+
+# Delete
+$ curl -X DELETE http://localhost:8080/authors/1
+
+
+# simple get with JSON Output with JQ
+$ curl -X GET http://localhost:8080/api/books | jq
