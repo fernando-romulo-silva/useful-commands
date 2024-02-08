@@ -4,17 +4,18 @@
 [![Project status](https://img.shields.io/badge/Project%20status-Maintenance-orange.svg)](https://img.shields.io/badge/Project%20status-Maintenance-orange.svg)
 
 ## Project status
-Some useful terminal programs that help the author in his work life.
+
+Some useful terminal programs that help the author in his work life.<br />
+I change this project constantly improving and adding new examples, click [here](docs/STATUS.md) to follow up.
 
 # About
-This is a set of Linux useful terminal commands that help the author in his work life.<br />
-It's not an executable project, just a place to reminder "how to do".
 
+It's not an executable project, just a place to reminder "how to do" with short description.<br />
 I separate it into folders:
 
 ## virtualization
 
-Some docker, docker-compose, kubernets, and minikube terminal commands, with short description.
+Some docker, docker-compose, kubernets, and minikube terminal commands.
 
 ## internet
 
@@ -23,7 +24,8 @@ Some useful terminal commands helping to deal with the internet stuff like curl 
 ## multimida
 
 Ripping, extract audio, converting videos, and audios, etc.<br />
-A lot of stuff for multimedia things. Thanks [ffmpeg](https://github.com/FFmpeg/FFmpeg)!
+A lot of stuff for multimedia things.<br />
+Thanks [ffmpeg](https://github.com/FFmpeg/FFmpeg)!
 
 ## utils
 
