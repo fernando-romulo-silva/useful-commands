@@ -7,7 +7,7 @@
 Some useful terminal programs that help the author in his work life.
 
 # About
-This is a set of Linux useful terminal commands that help the author in his work life.
+This is a set of Linux useful terminal commands that help the author in his work life.<br />
 It's not an executable project, just a place to reminder "how to do".
 
 I separate it into folders:
@@ -18,11 +18,11 @@ Some docker, docker-compose, kubernets, and minikube terminal commands, with sho
 
 ## internet
 
-Some useful terminal commands helping to deal with the internet stuff.
+Some useful terminal commands helping to deal with the internet stuff like curl commands, youtubedl, etc.
 
 ## multimida
 
-Ripping, extract audio, converting videos, and audios, etc. 
+Ripping, extract audio, converting videos, and audios, etc.<br />
 A lot of stuff for multimedia things. Thanks [ffmpeg](https://github.com/FFmpeg/FFmpeg)!
 
 ## utils
@@ -31,8 +31,8 @@ Commands that help me on servers, like tail logs, start wildfly servers, process
 
 ## cloud
 
-The most common cloud commands I used.
+The most common cloud commands I used. So far only GCP.
 
 ## security
 
-Basic instrunction
+Basic instrunctions to handle SSL files and commands.

@@ -54,6 +54,5 @@ $ curl -H "Accept: application/json" http://localhost:8080/metrics/application
 # Delete
 $ curl -X DELETE http://localhost:8080/authors/1
 
-
-# simple get with JSON Output with JQ
+# simple get with JSON Output with JQ (a http response formater -> sudo apt install jq)
 $ curl -X GET http://localhost:8080/api/books | jq
