@@ -8,6 +8,10 @@
 Some useful terminal programs that help the author in his work life.<br />
 I change this project constantly improving and adding new examples, click [here](docs/STATUS.md) to follow up.
 
+# The Problem
+
+I constantly use terminal commands for different purposes, so I do need to save them to reuse them again in an organized way.
+
 # About
 
 It's not an executable project, just a place to reminder "how to do" with short description.<br />
