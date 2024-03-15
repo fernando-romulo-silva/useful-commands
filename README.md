@@ -10,7 +10,7 @@ I change this project constantly improving and adding new examples, click [here]
 
 # The Problem
 
-I constantly use terminal commands for different purposes, so I do need to save them to reuse them again in an organized way.
+I constantly use terminal commands for different purposes, so I do need to save them in an organized way to find these commands and reuse.
 
 # About
 
