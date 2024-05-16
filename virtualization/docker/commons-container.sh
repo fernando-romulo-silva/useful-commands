@@ -48,7 +48,14 @@ $ docker run --hostname my-rabbit --name some-rabbit --detach --env RABBITMQ_DEF
 # ===============================================================================
 # Graphite
 #
-$ docker run --detach --name graphite-server --publish 80:80 --publish 2003-2004:2003-2004 --publish 2023-2024:2023-2024 --publish 8125:8125/udp --publish 8126:8126 graphiteapp/graphite-statsd
+$ docker run --detach \
+	--name graphite-server \
+	--publish 80:80 \
+	--publish 2003-2004:2003-2004 \
+	--publish 2023-2024:2023-2024 \
+	--publish 8125:8125/udp \
+	--publish 8126:8126 \
+	graphiteapp/graphite-statsd
 #
 #
 # ===============================================================================
@@ -62,11 +69,38 @@ $ docker run --detach --name graphana-server --publish 3000:3000 grafana/grafana
 # Prometeus
 # 
 #
-$ docker run --detach --name=prometheus --publish 9090:9090 --volume src/main/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml
+$ docker run --detach --name=prometheus \
+		--publish 9090:9090 \
+		--volume src/main/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus \
+		--config.file=/etc/prometheus/prometheus.yml
 #
 #
 # ===============================================================================
 # Mongo DB
-# 127.0.0.1:27017
-#
-$ docker run --name test-mongo --detach --env MONGO_INITDB_ROOT_USERNAME=root --env MONGO_INITDB_ROOT_PASSWORD=root --env MONGO_INITDB_DATABASE=testdb --publish 27017:27017 --publish 28017:28017 mongo:latest
+# uri: mongodb://root:root@127.0.0.1:27017/mydatabase?authSource=admin&authMechanism=SCRAM-SHA-1
+# or
+# uri: mongodb://user:secret@127.0.0.1:27017/mydatabase?authSource=admin&authMechanism=SCRAM-SHA-1
+# 
+$ docker run --name test-mongo --detach \
+		--env MONGO_INITDB_ROOT_USERNAME=root \
+		--env MONGO_INITDB_ROOT_PASSWORD=root \
+		--env MONGO_INITDB_DATABASE=admin \
+		--env MONGO_NON_ROOT_USERNAME=user \
+		--env MONGO_NON_ROOT_PASSWORD=secret \
+		--publish 27017:27017 \
+		--publish 28017:28017 \
+		mongo:latest
+
+# uri mongodb://root:root@127.0.0.1:27017/mydatabase?authSource=admin&authMechanism=SCRAM-SHA-1		
+$ docker run --name test-mongo --detach \
+		--env MONGODB_ROOT_USER=root \
+		--env MONGODB_ROOT_PASSWORD=root \
+		--env MONGODB_REPLICA_SET_MODE=primary \
+		--env MONGODB_REPLICA_SET_NAME=rs0 \
+		--env MONGODB_REPLICA_SET_KEY=123456 \
+		--env MONGODB_ADVERTISED_HOSTNAME=localhost \
+		--env MONGODB_USERNAME=user \
+		--env MONGODB_PASSWORD=user \
+		--env MONGODB_DATABASE=mydatabase \
+		--publish 27017:27017 \
+		bitnami/mongodb:latest
