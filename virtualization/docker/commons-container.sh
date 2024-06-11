@@ -1,14 +1,12 @@
 # ===============================================================================
 # PostgreSQL
-
-$ docker run --name test-postgres --env POSTGRES_DB=postgres-db --env POSTGRES_USER=user --env POSTGRES_PASSWORD=user --detach --publish 5432:5432 postgres:latest
 #
+$ docker run --name test-postgres --env POSTGRES_DB=postgres-db --env POSTGRES_USER=user --env POSTGRES_PASSWORD=user --detach --publish 5432:5432 postgres:latest
 #
 # ===============================================================================
 # MySql
 #
 $ docker run --name test-mysql --env MYSQL_ROOT_PASSWORD=root --env MYSQL_DATABASE=mysql-db --env MYSQL_USER=user --env MYSQL_PASSWORD=user --detach --publish 3306:3306 mysql:latest
-#
 #
 # ===============================================================================
 # Oracle
@@ -20,14 +18,12 @@ $ docker run --name test-mysql --env MYSQL_ROOT_PASSWORD=root --env MYSQL_DATABA
 #
 $ docker run --name test-oracle --env ORACLE_ALLOW_REMOTE=true --detach --publish 1521:1521 wnameless/oracle-xe-11g-r2
 #
-#
 # ===============================================================================
 # Active MQ
 # http://0.0.0.0:8161 (firefox)
 # user and password: admin
 #                                                       tcp               admin http            amqp                  stomp
 $ docker run --name test-activemq --detach --publish 61616:61616 --publish 8161:8161 --publish 5672:5672 --publish 61613:61613 rmohr/activemq
-#
 #
 # ===============================================================================
 # Artemis MQ
@@ -36,14 +32,12 @@ $ docker run --name test-activemq --detach --publish 61616:61616 --publish 8161:
 #                                                                                                                  admin http   amqp           stomp
 $ docker run --name test-artemis --detach --env ARTEMIS_USERNAME=admin --env ARTEMIS_PASSWORD=admin --env ANONYMOUS_LOGIN=true --publish 8161:8161 --publish 61616:61616 --publish 5672:5672 vromero/activemq-artemis:2.12.0-alpine
 #
-#
 # ===============================================================================
 # Rabbit MQ
 # http://localhost:15672 (firefox) 
 # user and password: admin
 #
 $ docker run --hostname my-rabbit --name some-rabbit --detach --env RABBITMQ_DEFAULT_USER=admin --env RABBITMQ_DEFAULT_PASS=admin --env RABBITMQ_DEFAULT_VHOST=my_vhost --publish 5672:5672 --publish 15672:15672 rabbitmq:3-management
-#
 #
 # ===============================================================================
 # Graphite
@@ -57,13 +51,11 @@ $ docker run --detach \
 	--publish 8126:8126 \
 	graphiteapp/graphite-statsd
 #
-#
 # ===============================================================================
 # Grafana
 # user and password: admin
 #
 $ docker run --detach --name graphana-server --publish 3000:3000 grafana/grafana
-#
 #
 # ===============================================================================
 # Prometeus
@@ -74,6 +66,22 @@ $ docker run --detach --name=prometheus \
 		--volume src/main/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus \
 		--config.file=/etc/prometheus/prometheus.yml
 #
+# ===============================================================================
+# Kafka
+#		
+$ docker run -p 9092:9092 -d bashj79/kafka-kraft		
+		
+# Go inside the container (use exec)
+$ cd /opt/kafka/bin
+
+# Create a topic named 'samples'
+$ sh kafka-topics.sh --bootstrap-server localhost:9092 --create --topic samples --partitions 1 --replication-factor 1		
+
+# Consuming the 'samples'
+$ sh kafka-console-consumer.sh --bootstrap-server localhost:9092,another-host.com:29092 --topic samples
+
+# Connect to the metadata
+$ sh kafka-metadata-shell.sh --snapshot /tmp/kraft-combined-logs/__cluster_metadata-0/00000000000000000167.log
 #
 # ===============================================================================
 # Mongo DB
