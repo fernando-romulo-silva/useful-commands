@@ -37,7 +37,15 @@ $ docker run --name test-artemis --detach --env ARTEMIS_USERNAME=admin --env ART
 # http://localhost:15672 (firefox) 
 # user and password: admin
 #
-$ docker run --hostname my-rabbit --name some-rabbit --detach --env RABBITMQ_DEFAULT_USER=admin --env RABBITMQ_DEFAULT_PASS=admin --env RABBITMQ_DEFAULT_VHOST=my_vhost --publish 5672:5672 --publish 15672:15672 rabbitmq:3-management
+$ docker run --hostname my-rabbit \
+	--name some-rabbit \
+	--detach \
+	--env RABBITMQ_DEFAULT_USER=admin \
+	--env RABBITMQ_DEFAULT_PASS=admin \
+	--env RABBITMQ_DEFAULT_VHOST=my_vhost \
+	--publish 5672:5672 \
+	--publish 15672:15672 \
+	rabbitmq:3-management
 #
 # ===============================================================================
 # Graphite
@@ -59,7 +67,6 @@ $ docker run --detach --name graphana-server --publish 3000:3000 grafana/grafana
 #
 # ===============================================================================
 # Prometeus
-# 
 #
 $ docker run --detach --name=prometheus \
 		--publish 9090:9090 \
@@ -69,20 +76,46 @@ $ docker run --detach --name=prometheus \
 # ===============================================================================
 # Kafka
 #		
-$ docker run -p 9092:9092 -d bashj79/kafka-kraft		
+$ docker run --detach \
+			--env KRAFT_CONTAINER_HOST_NAME=kafka \
+			--env KRAFT_CREATE_TOPICS=topic-a,topic-b,topic-c \
+			--env KRAFT_PARTITIONS_PER_TOPIC=3 \
+			--env KRAFT_AUTO_CREATE_TOPICS=true \
+			--publish 9093:9093 \
+			moeenz/docker-kafka-kraft
 		
 # Go inside the container (use exec)
 $ cd /opt/kafka/bin
 
 # Create a topic named 'samples'
-$ sh kafka-topics.sh --bootstrap-server localhost:9092 --create --topic samples --partitions 1 --replication-factor 1		
+$ sh kafka-topics.sh --bootstrap-server localhost:9093 --create --topic samples --partitions 1 --replication-factor 1		
 
-# Consuming the 'samples'
-$ sh kafka-console-consumer.sh --bootstrap-server localhost:9092,another-host.com:29092 --topic samples
+# Consuming events
+$ sh kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic samples --property "print.headers=true" --property "print.key=true" --property "print.timestamp=true"
+
+# Writing events (You can stop the producer client with Ctrl-C at any time)
+$ sh kafka-console-producer.sh --topic samples --bootstrap-server localhost:9093
+This is my first event
+
+# Writing events with header
+$ sh kafka-console-producer.sh --topic samples --bootstrap-server localhost:9093 --property "parse.headers=true" --property "headers.key.separator=:" --property "headers.delimiter=;"
+
+# --property parse.key=true
+# Payload format "header_name:header_value;payload_value" Ex:
+person:org.system.Person;{"name": "Jane Doe", "age": 20}
+__TypeId__:boleto;{"linhaDigitavel": "123456789"} # spring boot
 
 # Connect to the metadata
 $ sh kafka-metadata-shell.sh --snapshot /tmp/kraft-combined-logs/__cluster_metadata-0/00000000000000000167.log
 #
+
+# -----------
+$ docker run --detach \
+		-it --publish 18080:8080 \
+		--env DYNAMIC_CONFIG_ENABLED=true \
+		--env KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=localhost:9093 \
+		provectuslabs/kafka-ui
+
 # ===============================================================================
 # Mongo DB
 # uri: mongodb://root:root@127.0.0.1:27017/mydatabase?authSource=admin&authMechanism=SCRAM-SHA-1
