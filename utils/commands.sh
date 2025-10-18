@@ -46,7 +46,7 @@ $ !df
 $ !!
 
 # pass parameter to command
-touch arq1
+$ touch arq1
 
 # first
 $ ls -lha !^
@@ -98,11 +98,15 @@ $ nohup ./standalone.sh -DappEnv=dev -b 0.0.0.0 &
 
 #### Kill process #################################################################################################
 
-$ ps aux | grep jboss  # (find proccess â€œpidâ€� )
+$ ps aux | grep jboss  # (find proccess relates to jboss )
 
-$ ps -ef | grep firefox
+$ ps -ef | grep -v grep | grep firefox # remove the command grep from the lists
 
 # Or
+
+# new command, recommended
+$ pgrep nginx 
+
 
 $ jps (pids de processos java)
 
@@ -122,13 +126,16 @@ $ free -m -t
 
 $ top
 
-# ou
+# press 'q' exit
+# pres 'u' to filter by user
 
-$ htop # press q
+# or
+
+$ htop 
 
 #### Check the port is open #######################################################################################
 
-lsof -i tcp:5005
+$ lsof -i tcp:5005
 
 
 #### Add executable ###############################################################################################
