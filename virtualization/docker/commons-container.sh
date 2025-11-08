@@ -88,10 +88,16 @@ $ docker run --detach \
 $ cd /opt/kafka/bin
 
 # Create a topic named 'samples'
-$ sh kafka-topics.sh --bootstrap-server localhost:9093 --create --topic samples --partitions 1 --replication-factor 1		
+$ sh kafka-topics.sh --bootstrap-server localhost:9093 --create --topic samples --partitions 1 --replication-factor 1
+
+# Update a topic
+$ sh kafka-topics.sh --bootstrap-server localhost:9093 --alter --topic samples --partitions 3
 
 # Consuming events
 $ sh kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic samples --property "print.headers=true" --property "print.key=true" --property "print.timestamp=true"
+
+# Describe groups
+$ sh kafka-consumer-groups.sh --all-groups --bootstrap-server localhost:9093 --describe
 
 # Writing events (You can stop the producer client with Ctrl-C at any time)
 $ sh kafka-console-producer.sh --topic samples --bootstrap-server localhost:9093
