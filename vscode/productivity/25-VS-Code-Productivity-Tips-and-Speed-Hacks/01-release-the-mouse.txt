@@ -1,0 +1,92 @@
+---------------------------------------------
+Highlight text or select text 
+
+Ctrl + <- or ->
+
+---------------------------------------------
+Command Pallete
+
+Ctrl + Shift + p
+
+* type a command -> e.g 'format file'
+
+---------------------------------------------
+Quick Open Menu
+
+Ctrl + p
+
+* type file name -> list project's file
+
+* @ -> list properties and methods [1]
+
+* # -> Global symbol search, libs [2]
+
+---------------------------------------------
+Navigate Between Files 
+
+Ctrl + Tab
+
+---------------------------------------------
+List File Elements (methods, attributes, etc.) [1]
+
+Ctrl + Shift + .
+
+---------------------------------------------
+Comment the code
+
+Select some lines
+
+Ctrl + K .. Ctrl C
+
+Or
+
+Ctrl + /
+
+---------------------------------------------
+Got to Line
+
+Ctrl + G
+
+---------------------------------------------
+Search Types [2]
+
+Ctrl + t
+
+---------------------------------------------
+Find Match
+
+Select Some Lines
+
+Ctrl + D
+
+---------------------------------------------
+Set Multiple Cursors
+
+Alt + Click
+
+---------------------------------------------
+Remove Line 
+
+Ctrl + x
+
+---------------------------------------------
+Move Line
+
+Alt + Up | Down
+
+---------------------------------------------
+Open Terminal
+
+Ctrl + Shift + `
+
+---------------------------------------------
+Find all References
+
+Shift + Alt + F12
+
+---------------------------------------------
+Replace all References
+
+Ctrl + F12
+
+---------------------------------------------

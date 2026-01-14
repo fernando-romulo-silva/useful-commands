@@ -88,10 +88,13 @@ $ docker run --detach \
 $ cd /opt/kafka/bin
 
 # Create a topic named 'samples'
-$ sh kafka-topics.sh --bootstrap-server localhost:9093 --create --topic samples --partitions 1 --replication-factor 1
+$ sh kafka-topics.sh --bootstrap-server kafka-1:9092 --create --topic ECOMMERCE_NEW_ORDER --partitions 3 --replication-factor 3
 
 # Update a topic
 $ sh kafka-topics.sh --bootstrap-server localhost:9093 --alter --topic samples --partitions 3
+
+# clean a topic
+$ sh kafka-configs.sh --bootstrap-server localhost:9093 --entity-type topics --entity-name samples --alter --add-config retention.ms=60000 # 1 minute retention
 
 # Consuming events
 $ sh kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic samples --property "print.headers=true" --property "print.key=true" --property "print.timestamp=true"
