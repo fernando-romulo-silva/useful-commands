@@ -59,6 +59,10 @@ Select Some Lines
 
 Ctrl + D
 
+OR
+
+Ctrl + Shift + l for all matches
+
 ---------------------------------------------
 Set Multiple Cursors
 
@@ -90,3 +94,10 @@ Replace all References
 Ctrl + F12
 
 ---------------------------------------------
+Replace Text
+
+Ctrl + h Currenct File
+
+OR
+
+Ctrl + Shift + h For all project
