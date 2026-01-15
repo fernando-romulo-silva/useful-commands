@@ -37,6 +37,6 @@ Ctrl + K + Ctrl + S
 ---------------------------------------------
 Go Back and Forward
 
-Ctrl + Shift + -
-
 Ctrl + Alt + -
+
+Ctrl + Shift + -
