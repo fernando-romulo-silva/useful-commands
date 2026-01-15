@@ -1,7 +1,7 @@
 ---------------------------------------------
 Enter To Zen Mode (focus)
 
-Ctrl + K + Z
+Ctrl + K .. Z
 
 Esc twice to exit
 
@@ -15,14 +15,14 @@ Close File
 
 Ctrl + W one file
 
-Ctrl + k + W all files
+Ctrl + k .. W all files
 
 ---------------------------------------------
 Open New Editor
 
 Ctrl + \ Aside
 
-Ctrl + K + Ctrl + \ Above
+Ctrl + K .. Ctrl + \ Above
 
 ---------------------------------------------
 Navigate Between Files 
@@ -32,7 +32,7 @@ Ctrl + Tab
 ---------------------------------------------
 All ShortCuts
 
-Ctrl + K + Ctrl + S
+Ctrl + K ..  Ctrl + S
 
 ---------------------------------------------
 Go Back and Forward
