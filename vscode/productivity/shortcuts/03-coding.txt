@@ -1,0 +1,28 @@
+---------------------------------------------
+Rename Variables
+
+select the var and press F2
+
+---------------------------------------------
+Comment the code
+
+Select some lines
+
+Ctrl + K .. Ctrl + C
+
+Or
+
+Ctrl + /
+
+---------------------------------------------
+Find all References
+
+Shift + Alt + F12
+
+---------------------------------------------
+Search Types [2]
+
+Ctrl + T
+
+---------------------------------------------
+

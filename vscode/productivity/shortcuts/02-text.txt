@@ -1,0 +1,43 @@
+---------------------------------------------
+Highlight text or select text 
+
+Ctrl + <- or ->
+---------------------------------------------
+Got to Line
+
+Ctrl + G
+---------------------------------------------
+Find Match
+
+Select Some Lines
+
+Ctrl + D
+
+OR
+
+Ctrl + Shift + L for all matches
+---------------------------------------------
+Set Multiple Cursors
+
+Alt + Click
+---------------------------------------------
+Remove Line 
+
+Ctrl + X
+---------------------------------------------
+Move Line
+
+Alt + Up | Down
+---------------------------------------------
+Replace all References
+
+Ctrl + F12
+---------------------------------------------
+Replace Text
+
+Ctrl + H Currenct File
+
+OR
+
+Ctrl + Shift + H For all project
+---------------------------------------------

@@ -16,6 +16,7 @@ paste json as code
 
 compareit
 
+vscode-icons
 
 
 docker

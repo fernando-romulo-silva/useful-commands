@@ -1,0 +1,37 @@
+---------------------------------------------
+Command Pallete
+
+Ctrl + Shift + p
+
+* type a command -> e.g 'format file'
+
+---------------------------------------------
+Quick Open Menu
+
+Ctrl + P
+
+* type file name -> list project's file
+
+* @ -> list properties and methods [1]
+
+* # -> Global symbol search, libs [2]
+
+---------------------------------------------
+List File Elements (methods, attributes, etc.) [1]
+
+Ctrl + Shift + .
+
+---------------------------------------------
+Open Terminal
+
+Ctrl + Shift + `
+
+----------------------------------------------
+AI Prompt
+
+Ctrl + Alt + I opens the Chat view
+
+Ctrl + I  inline chat with selected code
+
+----------------------------------------------
+
