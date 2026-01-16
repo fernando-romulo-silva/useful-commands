@@ -3,9 +3,39 @@ Highlight text or select text
 
 Ctrl + <- or ->
 ---------------------------------------------
-Got to Line
+Go to Line
 
 Ctrl + G
+
+---------------------------------------------
+Go to Column
+
+Home first column
+
+End last column
+
+You can use arrows + Ctrl to navigate fast between words
+
+---------------------------------------------
+Select Line
+
+Ctrl + L
+
+---------------------------------------------
+Move Line
+
+Alt + Up | Down
+
+---------------------------------------------
+Copy Line
+
+Shift + Alt + Up | Down
+
+---------------------------------------------
+Add Cursors To Selected Lines
+
+Shift + Alt + I
+
 ---------------------------------------------
 Find Match
 
