@@ -14,8 +14,6 @@ Or
 
 Ctrl + /
 
-
-
 ---------------------------------------------
 Go to Definition (in class)
 
@@ -34,4 +32,7 @@ Search Types [2]
 Ctrl + T
 
 ---------------------------------------------
+Go to Source Control (Git)
+
+Ctrl + Shift + G .. G
 

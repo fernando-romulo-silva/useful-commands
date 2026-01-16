@@ -6,6 +6,21 @@ Ctrl + K .. Z
 Esc twice to exit
 
 ---------------------------------------------
+Open Explorer
+
+Ctrl + Shift + E
+
+---------------------------------------------
+Toggles Explorer
+
+Ctrl + B
+
+---------------------------------------------
+Toggles Panel
+
+Ctrl + J
+
+---------------------------------------------
 New File
 
 Ctrl + N
@@ -30,13 +45,13 @@ Navigate Between Files
 Ctrl + Tab
 
 ---------------------------------------------
-All ShortCuts
-
-Ctrl + K ..  Ctrl + S
-
----------------------------------------------
 Go Back and Forward
 
 Ctrl + Alt + -
 
 Ctrl + Shift + -
+
+---------------------------------------------
+All ShortCuts
+
+Ctrl + K ..  Ctrl + S
