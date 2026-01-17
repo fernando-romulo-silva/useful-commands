@@ -36,3 +36,20 @@ Go to Source Control (Git)
 
 Ctrl + Shift + G .. G
 
+---------------------------------------------
+Got to Debug Control
+
+Ctrl + Shift + D
+
+F5 start debug
+Shift + F5 stop debug
+Ctrl + Shift + F5 restart debug
+
+F10 Step Over
+F11 Step Into
+Shift F11 Step Out
+
+----------------------------------------------
+Import and organize imports
+
+Shift + Alt + O

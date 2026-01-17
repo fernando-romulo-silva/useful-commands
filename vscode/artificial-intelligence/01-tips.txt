@@ -1,0 +1,8 @@
+
+-----------------------------------------
+01 Put a command on comments to generate something
+
+Ex:
+
+--> // log the creation
+	LOGGER.debug("Command Facade created {}" // code generate

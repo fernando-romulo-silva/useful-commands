@@ -33,6 +33,11 @@ Ctrl + W one file
 Ctrl + k .. W all files
 
 ---------------------------------------------
+Reopen Last Closed File 
+
+Ctrl + Shift + T
+
+---------------------------------------------
 Open New Editor
 
 Ctrl + \ Aside
