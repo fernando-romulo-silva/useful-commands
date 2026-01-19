@@ -49,6 +49,10 @@ Navigate Between Files
 
 Ctrl + Tab
 
+OR
+
+Ctrl + Page Up | Page Down
+
 ---------------------------------------------
 Go Back and Forward
 
