@@ -1,8 +1,15 @@
 
 -----------------------------------------
-01 Put a command on comments to generate something
+Put a command on comments to generate something
 
 Ex:
 
 --> // log the creation
-	LOGGER.debug("Command Facade created {}" // code generate
+	LOGGER.debug("Command Facade created {}", obj) // code generate
+
+-----------------------------------------
+Show next suggestion: 
+-> Press Alt + ]
+
+Show previous suggestion
+-> Press Alt + [
