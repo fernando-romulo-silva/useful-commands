@@ -1,0 +1,10 @@
+
+Ter clareza ao dar instruções
+
+Dividir tarefas complexas em subtarefas settings_overscan
+
+Pedir para o modelo explicar seus passos antes de dar a resposta
+
+Pedir para o modelo dar justificativas de suas respostas
+
+Gerar varias resposta diferentes e pedir para o modelo escolher a melhor

@@ -53,3 +53,10 @@ Shift F11 Step Out
 Import and organize imports
 
 Shift + Alt + O
+
+----------------------------------------------
+Transform to a new Variable, Method, and Parameter
+
+Ctrl + .
+
+In case you're using ubuntu execute $ ibus restart

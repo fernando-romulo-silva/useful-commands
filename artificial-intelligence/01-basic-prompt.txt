@@ -1,6 +1,44 @@
-The following delimiters are commonly used:
 
-1) """ (three double quotation marks):
+Break down complex tasks into subtasks (settings_overscan)
+
+Ask the model to explain its steps before giving the answer
+
+Ask the model to justify its answers
+
+Generate several different answers and ask the model to choose the best one
+
+
+1) Be clear and specific: 
+When writing a prompt, it's important to be clear and specific about what you want ChatGPT to do. 
+This helps the model understand exactly what you're asking and generate a more precise response.
+Therefore, it's important to avoid using vague or ambiguous terms that could confuse the model.
+
+For example, instead of writing "Give me information about Java," try writing "What is the syntax of the Java programming language?"
+
+
+2) Provide context: 
+Providing additional information or relevant context to ChatGPT can help the model better understand the question and generate a more accurate response. 
+If you are asking a question about a specific topic, you can provide some basic information about that topic in the prompt.
+
+For example, if you are asking a question about an error in Python code, provide some basic details about what that code is.
+
+3) Avoid complex questions:
+
+Avoid asking complex questions or questions that require detailed answers. 
+ChatGPT works best when it receives simple and direct questions. 
+Therefore, try breaking down complex questions into smaller, simpler ones.
+
+
+4) Let's think step-by-step
+
+This year the company's revenue grew by 20%, but profit (EBITDA) fell by 10%. What happened?
+
+let's think, step by step
+
+
+5) Use The following delimiters are commonly used:
+
+5.1) """ (three double quotation marks):
 To indicate a text that should not be processed or interpreted.
 Ex:
 
@@ -14,7 +52,7 @@ Python is a high-level, multi-paradigm, general-purpose language that supports o
 
 Title:
 
-2) ```(three backticks): 
+5.2) ```(three backticks): 
 The three backticks are used to indicate that the content between them is treated as a block of code. 
 Ex:
 
@@ -25,7 +63,7 @@ for i in range(5):
    print(i)
 ```
 
-3) _____ (underlines): 
+5.3) _____ (underlines): 
 Underlines can be used to generate a form-format result. 
 This is useful if you want to automate the output of a prompt and don't want the result to be in code, only in text.
 Ex:
@@ -44,34 +82,7 @@ Channels: _____, _____,_____
 Strengths: _____,_____,_____
 
 
-4) Use quotations: 
+5.4) Use quotations: 
 Use quotation marks to quote relevant passages of text in your prompt, especially if you are asking a question based on a quote from a text.
 
 What is the book "Storytelling with Data" by author Cole Nussbaumer Knaflic about?
-
-5) Be clear and specific: 
-When writing a prompt, it's important to be clear and specific about what you want ChatGPT to do. 
-This helps the model understand exactly what you're asking and generate a more precise response.
-Therefore, it's important to avoid using vague or ambiguous terms that could confuse the model.
-
-For example, instead of writing "Give me information about Java," try writing "What is the syntax of the Java programming language?"
-
-
-6) Provide context: 
-Providing additional information or relevant context to ChatGPT can help the model better understand the question and generate a more accurate response. 
-If you are asking a question about a specific topic, you can provide some basic information about that topic in the prompt.
-
-For example, if you are asking a question about an error in Python code, provide some basic details about what that code is.
-
-7) Avoid complex questions:
-
-Avoid asking complex questions or questions that require detailed answers. 
-ChatGPT works best when it receives simple and direct questions. 
-Therefore, try breaking down complex questions into smaller, simpler ones.
-
-
-8) Let's think step-by-step
-
-This year the company's revenue grew by 20%, but profit (EBITDA) fell by 10%. What happened?
-
-let's think, step by step
