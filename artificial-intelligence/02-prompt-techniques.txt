@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------------
+
+01 Zero-Shot Prompting
+
+Large language model (LLM) is instructed to perform a task without being given any examples or prior demonstrations
+Zero-shot prompting is best for simple, common tasks where the model likely already understands the context.
+
+Common Use Cases:
+
+* Sentiment Analysis: "Classify the sentiment of this review as positive or negative".
+
+* Summarization: "Summarize the following text in two sentences".
+
+* Translation: "Translate 'Hello' to Spanish".
+
+* Text Classification: "Categorize this email as spam or not spam" IBM.
+
+---------------------------------------------------------------------------------------
+
+02 Few-shot prompting
+
+Prompt engineering technique where a model is provided with a few examples (demonstrations) of input-output pairs within the prompt to improve accuracy, guide the tone, and dictate formatting.
+
+Common Use Cases:
+
+* When the task requires high precision;
+
+* Generating text with a defined format;
+
+* In categorizations with a lot of variety;
+
+* Tasks with complex rules.
+
+
+Define the task: Briefly explain what you want the AI to do.
+Provide examples: Give 2–5 examples showing inputs and desired outputs, according to PromptHub and Mem0.
+Provide the target input: Ask the AI to complete the final example. 
+
+Ex:
+
+A "whatpu" is a small, furry animal native to Tanzania. 
+An example of a sentence that uses the word whatpu is:
+We were traveling in Africa and we saw these very cute whatpus.
+ 
+To do a "farduddle" means to jump up and down really fast.
+
+---------------------------------------------------------------------------------------
+
+03 Chain of Thought
+
+Technique that improves Large Language Model (LLM) performance on complex tasks—such as math, logic, and reasoning—by encouraging the model to generate intermediate, step-by-step reasoning steps before providing a final answer.
+
+Examples include adding "Let's think step by step" to queries, providing examples with intermediate reasoning steps
+
+Ex:
+
+A farmer has 17 sheep. All but 9 die. How many are left?
+
+Think through this step by step:
+1. What does "all but 9" mean?
+2. What happens to those 9?
+3. How many are left?
+
+---------------------------------------------------------------------------------------
