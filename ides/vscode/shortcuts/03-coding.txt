@@ -3,6 +3,12 @@ Rename Variables
 
 select the var and press F2
 
+----------------------------------------------
+Go to Symbol (methods and Variables)
+
+Ctrl + Shift + O
+
+
 ---------------------------------------------
 Comment the code
 

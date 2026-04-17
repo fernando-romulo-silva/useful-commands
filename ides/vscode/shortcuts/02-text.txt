@@ -10,9 +10,9 @@ Ctrl + G
 ---------------------------------------------
 Go to Column
 
-Home first column
+Home to first column
 
-End last column
+End to last column
 
 You can use arrows + Ctrl to navigate fast between words
 
