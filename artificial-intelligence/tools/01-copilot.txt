@@ -1,0 +1,41 @@
+
+01 - Slash commands (build in prompts)
+
+/explain
+/fix
+/tests
+/doc
+/new
+
+
+02 - #file references
+
+#file auth.ts how does my auth module work?
+
+
+03 - Customer Instructions
+
+copilot-instructins.md (agent.md)
+
+
+04 - Next Edit Suggestions
+
+
+05 - Agent Mode Loop
+
+"Add JWT authentication"
+
+
+06 - Agent code review
+
+
+07 - Agent hooks
+
+
+08 - MCP Servers
+
+09 - Github Spark
+
+10 - Copilot CLI
+
+copilot autopilot

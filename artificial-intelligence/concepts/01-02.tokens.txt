@@ -1,0 +1,7 @@
+Unit process
+
+- Word-based: walk, drink, etc.
+- Character-based: walk -> w+a+l+k
+- Subword-based: byte-pair
+
+Embeddings vector: similiaridade

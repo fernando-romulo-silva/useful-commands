@@ -1,3 +1,14 @@
+
+00 - Use tools or recommendations for prompting
+
+Você começa com um 
+
+/specify (o que e por que), 
+
+passa pro /plan (como), 
+
+depois /tasks (quebra em tarefas),
+
 ---------------------------------------------------------------------------------------
 
 01 Zero-Shot Prompting

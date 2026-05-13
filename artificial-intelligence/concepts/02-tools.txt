@@ -1,0 +1,20 @@
+Claude Code 
+ - no ide 
+ - Sonnet e Opus
+ - MCP
+ - Hooks
+ - Sub agents
+
+Cursor
+ - VS Code fork
+ - Claude, GPT, Gemini
+
+Antigravity
+ - IDE
+ - Google
+ - Agent Manager
+
+Lovable
+ - App generator
+ - Excellent for MVP
+

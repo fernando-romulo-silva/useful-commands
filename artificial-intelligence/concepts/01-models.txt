@@ -1,0 +1,23 @@
+
+Context window
+
+-> system prompt : internal configs
+-> claude.md : context and rules of project
+-> project code: open files and references
+-> chat session: already discussed in session
+
+Token cost
+
+-> simple   : haiku/flash  (format json)
+-> moderate : sonnet/pro (refact module, write tests)
+-> advanced : Opus/ultra (arquitecture plannig)
+
+Latence
+
+
+Quality's Output
+
+===========================================
+
+RAG specific: you provide all the knowledge (low cost)
+Fine Tunning: teach the model how to behavior, style (high cost)
